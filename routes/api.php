@@ -60,9 +60,25 @@ Route::put('zones/{zona}', 'ZonaController@update');
 Route::delete('zones/{zona}', 'ZonaController@delete');
 
 //Rutes de Assoliment
-/*
+
 Route::get('assoliments', 'AssolimentController@index');
 Route::get('assoliments/{assoliment}', 'AssolimentController@show');
 Route::post('assoliments', 'AssolimentController@store');
 Route::put('assoliments/{assoliment}', 'AssolimentController@update');
-Route::delete('assoliments/{assoliment}', 'AssolimentController@delete');*/
+Route::delete('assoliments/{assoliment}', 'AssolimentController@delete');
+
+//Rutes de Penalitzacio
+
+Route::get('penalitzacions', 'PenalitzacioController@index');
+Route::get('penalitzacions/{penalitzacio}', 'PenalitzacioController@show');
+Route::post('penalitzacions', 'PenalitzacioController@store');
+Route::put('penalitzacions/{penalitzacio}', 'PenalitzacioController@update');
+Route::delete('penalitzacions/{penalitzacio}', 'PenalitzacioController@delete');
+
+//Rutes de Comentaris
+
+Route::get('comentaris', 'ComentariController@index');
+Route::get('comentaris/{comentari}', 'ComentariController@show');
+Route::post('comentaris', 'ComentariController@store');
+Route::put('comentaris/{comentari}', 'ComentariController@update');
+Route::delete('comentaris/{comentari}', 'ComentariController@delete');
