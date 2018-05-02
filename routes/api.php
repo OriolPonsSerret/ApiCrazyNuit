@@ -82,3 +82,7 @@ Route::get('comentaris/{comentari}', 'ComentariController@show');
 Route::post('comentaris', 'ComentariController@store');
 Route::put('comentaris/{comentari}', 'ComentariController@update');
 Route::delete('comentaris/{comentari}', 'ComentariController@delete');
+
+//ruta de autenticacio
+
+Route::post(register, 'Auth\RegisterController@register);
