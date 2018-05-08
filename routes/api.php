@@ -85,4 +85,4 @@ Route::delete('comentaris/{comentari}', 'ComentariController@delete');
 
 //ruta de autenticacio
 
-Route::post(register, 'Auth\RegisterController@register);
+//Route::post(register, 'Auth\RegisterController@register);
