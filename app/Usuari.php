@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $idusuaris
  * @property string $nom
+ * @property string $descripcio
  * @property string $DataNaixement
  * @property string $correu_electronic
  * @property string $telefon
  * @property string $data_alta
  * @property string $data_baixa
  * @property string $rol
+ * @property string $password
+ * @property string $api_token
  * @property Assoliment[] $assoliments
  * @property Rute[] $rutes
  */
@@ -35,8 +38,11 @@ class Usuari extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nom', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'rol'];
+    protected $fillable = ['nom', 'descripcio', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'rol', 'password', 'api_token'];
 
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

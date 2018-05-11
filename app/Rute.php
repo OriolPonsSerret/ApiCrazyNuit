@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $idrutes
+ * @property string $rutnom
+ * @property int $rutcreador
  * @property int $rutmida
  * @property string $rutlocals
+ * @property string $rutdescripcio
  * @property string $rutdata
  * @property integer $rutvaloracio
  * @property BarRestaurant[] $barRestaurants
@@ -29,12 +32,12 @@ class Rute extends Model
      * 
      * @var bool
      */
-    public $incrementing = false;
+    protected $incrementing = false;
 
     /**
      * @var array
      */
-    protected $fillable = ['rutmida', 'rutlocals', 'rutdata', 'rutvaloracio'];
+    protected $fillable = ['rutnom', 'rutcreador', 'rutmida', 'rutlocals', 'rutdescripcio', 'rutdata', 'rutvaloracio'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
