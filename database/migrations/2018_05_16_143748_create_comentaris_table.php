@@ -16,6 +16,7 @@ class CreateComentarisTable extends Migration {
 		{
 			$table->integer('idcomentaris')->primary();
 			$table->string('comtext', 200);
+			$table->boolean('comvaloracio');
 		});
 	}
 

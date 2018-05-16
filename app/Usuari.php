@@ -38,10 +38,10 @@ class Usuari extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nom', 'descripcio', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'rol', 'password', 'api_token'];
+    protected $fillable = ['nom', 'descripcio', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'api_token'];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'password','api_token'
     ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

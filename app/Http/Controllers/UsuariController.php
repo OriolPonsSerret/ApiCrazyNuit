@@ -12,8 +12,14 @@ class UsuariController extends Controller
         return Usuari::all();
     }
  
-    public function show(Usuari $usuari)
+    public function show(Usuari $usuari)//, $id)
     {
+        //$value = $request->session()->get('key');
+        $usuari = DB::table('usuaris')
+            ->join('rutes', 'usuaris.idusuaris', '=', 'rutes.rutcreador')       
+            ->select('rutes.rutnom')
+            ->get();
+
         return $usuari;
     }
 

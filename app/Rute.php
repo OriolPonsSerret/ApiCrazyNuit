@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $idrutes
- * @property string $rutnom
  * @property int $rutcreador
  * @property int $rutmida
  * @property string $rutlocals
- * @property string $rutdescripcio
  * @property string $rutdata
  * @property integer $rutvaloracio
+ * @property string $rutnom
+ * @property string $rutdescripcio
+ * @property Usuari $usuari
  * @property BarRestaurant[] $barRestaurants
  * @property Discoteca[] $discotecas
  * @property Pub[] $pubs
@@ -37,7 +38,15 @@ class Rute extends Model
     /**
      * @var array
      */
-    protected $fillable = ['rutnom', 'rutcreador', 'rutmida', 'rutlocals', 'rutdescripcio', 'rutdata', 'rutvaloracio'];
+    protected $fillable = ['rutcreador', 'rutmida', 'rutlocals', 'rutdata', 'rutvaloracio', 'rutnom', 'rutdescripcio'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function usuari()
+    {
+        return $this->belongsTo('App\Usuari', 'rutcreador', 'idusuaris');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

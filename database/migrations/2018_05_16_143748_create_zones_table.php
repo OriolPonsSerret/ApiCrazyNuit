@@ -17,7 +17,7 @@ class CreateZonesTable extends Migration {
 			$table->integer('idzones')->primary();
 			$table->string('zonpoblacio', 30);
 			$table->string('zoncodi_postal', 45);
-			$table->string('zonpais', 45)->nullable();
+			$table->string('zonpais', 45);
 		});
 	}
 
