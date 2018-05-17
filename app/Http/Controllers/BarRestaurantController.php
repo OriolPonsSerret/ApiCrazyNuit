@@ -19,7 +19,7 @@ class BarRestaurantController extends Controller
 
     public function store(Request $request)
     {
-        $barrestaurant=Local::create($request->all());
+        $barrestaurant=BarRestaurant::create($request->all());
         return response()->json($barrestaurant, 201);
     }
 

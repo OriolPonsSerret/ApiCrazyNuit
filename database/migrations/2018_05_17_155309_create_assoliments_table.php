@@ -14,7 +14,7 @@ class CreateAssolimentsTable extends Migration {
 	{
 		Schema::create('assoliments', function(Blueprint $table)
 		{
-			$table->integer('idassoliments')->primary();
+			$table->integer('idassoliments', true);
 			$table->string('assonom', 45);
 			$table->string('assodescripcio', 200);
 			$table->string('assoimatge', 45)->nullable();

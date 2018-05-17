@@ -14,13 +14,13 @@ class CreateRutesTable extends Migration {
 	{
 		Schema::create('rutes', function(Blueprint $table)
 		{
-			$table->integer('idrutes')->primary();
+			$table->integer('idrutes', true);
 			$table->integer('rutmida');
 			$table->string('rutlocals', 500)->nullable();
 			$table->date('rutdata')->nullable();
 			$table->smallInteger('rutvaloracio')->nullable();
 			$table->string('rutnom', 100);
-			$table->integer('rutcreador')->nullable()->index('rutcreador_idx');
+			$table->integer('rutcreador')->nullable();
 			$table->string('rutdescripcio', 500)->nullable();
 		});
 	}

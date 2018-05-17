@@ -14,8 +14,8 @@ class AddForeignKeysToBarZonesTable extends Migration {
 	{
 		Schema::table('bar_zones', function(Blueprint $table)
 		{
-			$table->foreign('IdBar_Restaurant', 'IdBar_Restaurantzones')->references('idBar-Restaurant')->on('bar_restaurant')->onUpdate('CASCADE')->onDelete('CASCADE');
-			$table->foreign('IdZones', 'IdZonesBar')->references('idzones')->on('zones')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('IdBar_Restaurant', 'idbarzones')->references('idBar-Restaurant')->on('bar_restaurant')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('IdZones', 'idzonesbar')->references('idzones')->on('zones')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 
@@ -29,8 +29,8 @@ class AddForeignKeysToBarZonesTable extends Migration {
 	{
 		Schema::table('bar_zones', function(Blueprint $table)
 		{
-			$table->dropForeign('IdBar_Restaurantzones');
-			$table->dropForeign('IdZonesBar');
+			$table->dropForeign('idbarzones');
+			$table->dropForeign('idzonesbar');
 		});
 	}
 

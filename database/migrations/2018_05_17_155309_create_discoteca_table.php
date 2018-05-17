@@ -14,7 +14,7 @@ class CreateDiscotecaTable extends Migration {
 	{
 		Schema::create('discoteca', function(Blueprint $table)
 		{
-			$table->integer('idDiscoteca')->primary();
+			$table->integer('idDiscoteca', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();
@@ -22,6 +22,7 @@ class CreateDiscotecaTable extends Migration {
 			$table->dateTime('Horari-Tancament')->nullable();
 			$table->string('TipusGastronomic', 45)->nullable();
 			$table->integer('Categoria')->nullable();
+			$table->string('PreuEntrada', 45)->nullable();
 		});
 	}
 

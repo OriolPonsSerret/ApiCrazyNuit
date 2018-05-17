@@ -19,7 +19,7 @@ class ZonaController extends Controller
 
     public function store(Request $request)
     {
-        $zona=Local::create($request->all());
+        $zona=Zona::create($request->all());
         return response()->json($zona, 201);
     }
 

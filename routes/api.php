@@ -19,7 +19,7 @@ Route::post('usuaris', 'UsuariController@store');
 Route::put('usuaris/{usuari}', 'UsuariController@update');
 Route::delete('usuaris/{usuari}', 'UsuariController@delete');
 
-Route::group(['middleware' => 'auth:api'], function() {
+//Route::group(['middleware' => 'auth:api'], function() {
 	//Rutes de rutas
 	Route::get('rutes', 'RutesController@index');
 	Route::get('rutes/{rute}', 'RutesController@show');
@@ -68,7 +68,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 	Route::post('comentaris', 'ComentariController@store');
 	Route::put('comentaris/{comentari}', 'ComentariController@update');
 	Route::delete('comentaris/{comentari}', 'ComentariController@delete');
-});
+//});
 
 //rutes d'autenticacio
 Route::post('register', 'Auth\RegisterController@register');

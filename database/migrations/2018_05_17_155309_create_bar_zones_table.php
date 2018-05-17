@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatePubRutaTable extends Migration {
+class CreateBarZonesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreatePubRutaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('pub_ruta', function(Blueprint $table)
+		Schema::create('bar_zones', function(Blueprint $table)
 		{
-			$table->integer('idpub');
-			$table->integer('idrutes')->index('idrutespub_idx');
-			$table->primary(['idpub','idrutes']);
+			$table->integer('IdBar_Restaurant');
+			$table->integer('IdZones')->index('idzonesbar_idx');
+			$table->primary(['IdBar_Restaurant','IdZones']);
 		});
 	}
 
@@ -28,7 +28,7 @@ class CreatePubRutaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('pub_ruta');
+		Schema::drop('bar_zones');
 	}
 
 }

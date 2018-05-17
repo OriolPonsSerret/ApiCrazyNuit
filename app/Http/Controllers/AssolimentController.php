@@ -19,7 +19,7 @@ class AssolimentController extends Controller
 
     public function store(Request $request)
     {
-        $assoliment=Local::create($request->all());
+        $assoliment=Assoliment::create($request->all());
         return response()->json($assoliment, 201);
     }
 
