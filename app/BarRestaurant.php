@@ -4,7 +4,6 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 /**
  * @property int $idBar-Restaurant
  * @property string $Nom
@@ -32,13 +31,6 @@ class BarRestaurant extends Model
      * @var string
      */
     protected $primaryKey = 'idBar-Restaurant';
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
 
     /**
      * @var array

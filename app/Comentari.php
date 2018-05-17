@@ -19,13 +19,6 @@ class Comentari extends Model
     protected $primaryKey = 'idcomentaris';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
     protected $fillable = ['comtext', 'comvaloracio'];

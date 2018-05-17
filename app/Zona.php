@@ -30,13 +30,6 @@ class Zona extends Model
     protected $primaryKey = 'idzones';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
     protected $fillable = ['zonpoblacio', 'zoncodi_postal', 'zonpais'];

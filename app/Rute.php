@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $idrutes
- * @property int $rutcreador
  * @property int $rutmida
  * @property string $rutlocals
  * @property string $rutdata
  * @property integer $rutvaloracio
  * @property string $rutnom
+ * @property int $rutcreador
  * @property string $rutdescripcio
- * @property Usuari $usuari
  * @property BarRestaurant[] $barRestaurants
  * @property Discoteca[] $discotecas
  * @property Pub[] $pubs
@@ -22,6 +21,13 @@ use Illuminate\Database\Eloquent\Model;
 class Rute extends Model
 {
     /**
+     * The table associated with the model.
+     * 
+     * @var string
+     */
+    protected $table = 'rutes';
+
+    /**
      * The primary key for the model.
      * 
      * @var string
@@ -29,24 +35,9 @@ class Rute extends Model
     protected $primaryKey = 'idrutes';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public  $incrementing = true;
-
-    /**
      * @var array
      */
-    protected $fillable = ['rutcreador', 'rutmida', 'rutlocals', 'rutdata', 'rutvaloracio', 'rutnom', 'rutdescripcio'];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function usuari()
-    {
-        return $this->belongsTo('App\Usuari', 'rutcreador', 'idusuaris');
-    }
+    protected $fillable = ['rutmida', 'rutlocals', 'rutdata', 'rutvaloracio', 'rutnom', 'rutcreador', 'rutdescripcio'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
