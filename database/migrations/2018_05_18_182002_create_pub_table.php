@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBarRestaurantTable extends Migration {
+class CreatePubTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class CreateBarRestaurantTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bar_restaurant', function(Blueprint $table)
+		Schema::create('pub', function(Blueprint $table)
 		{
-			$table->integer('idBar-Restaurant', true);
+			$table->integer('idPub', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();
@@ -22,6 +22,7 @@ class CreateBarRestaurantTable extends Migration {
 			$table->dateTime('Horari-Tancament')->nullable();
 			$table->string('TipusGastronomic', 45)->nullable();
 			$table->integer('Categoria')->nullable();
+			$table->timestamps();
 		});
 	}
 
@@ -33,7 +34,7 @@ class CreateBarRestaurantTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bar_restaurant');
+		Schema::drop('pub');
 	}
 
 }

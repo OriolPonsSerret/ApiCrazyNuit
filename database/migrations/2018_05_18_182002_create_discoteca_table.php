@@ -23,6 +23,7 @@ class CreateDiscotecaTable extends Migration {
 			$table->string('TipusGastronomic', 45)->nullable();
 			$table->integer('Categoria')->nullable();
 			$table->string('PreuEntrada', 45)->nullable();
+			$table->timestamps();
 		});
 	}
 
