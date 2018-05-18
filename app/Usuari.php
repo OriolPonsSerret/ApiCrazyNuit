@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $idusuaris
  * @property string $nom
- * @property string $descripcio
  * @property string $DataNaixement
  * @property string $correu_electronic
  * @property string $telefon
  * @property string $data_alta
  * @property string $data_baixa
- * @property string $rol
  * @property string $password
- * @property string $api_token
+ * @property string $descripcio
  * @property Assoliment[] $assoliments
  * @property Rute[] $rutes
  */
@@ -29,20 +27,10 @@ class Usuari extends Model
     protected $primaryKey = 'idusuaris';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
-    protected $fillable = ['nom', 'descripcio', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'api_token'];
+    protected $fillable = ['nom', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'descripcio'];//, 'api_token'];
 
-    protected $hidden = [
-        'password','api_token'
-    ];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
@@ -59,6 +47,11 @@ class Usuari extends Model
         return $this->belongsToMany('App\Rute', 'usuaris_rutes', 'idusuaris', 'idrutes');
     }
 
+    public function rutesusuari()
+    {
+        return $this->hasMany('App\Rute');
+    }
+
     public function generateToken()
     {
         $this->api_token = str_random(60);
@@ -66,4 +59,5 @@ class Usuari extends Model
 
         return $this->api_token;
     }
+
 }

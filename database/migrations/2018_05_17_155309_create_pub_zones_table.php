@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBarZonesTable extends Migration {
+class CreatePubZonesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,11 @@ class CreateBarZonesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bar_zones', function(Blueprint $table)
+		Schema::create('pub_zones', function(Blueprint $table)
 		{
-			$table->integer('IdBar_Restaurant');
-			$table->integer('IdZones')->index('IdZones_idx');
-			$table->primary(['IdBar_Restaurant','IdZones']);
+			$table->integer('IdPub');
+			$table->integer('IdZones')->index('idzonespub_idx');
+			$table->primary(['IdPub','IdZones']);
 		});
 	}
 
@@ -28,7 +28,7 @@ class CreateBarZonesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bar_zones');
+		Schema::drop('pub_zones');
 	}
 
 }

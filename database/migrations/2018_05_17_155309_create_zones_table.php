@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateBarRutaTable extends Migration {
+class CreateZonesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,12 @@ class CreateBarRutaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('bar_ruta', function(Blueprint $table)
+		Schema::create('zones', function(Blueprint $table)
 		{
-			$table->integer('idbar_restaurant');
-			$table->integer('idrutes')->index('idrutesbar_idx');
-			$table->primary(['idbar_restaurant','idrutes']);
+			$table->integer('idzones', true);
+			$table->string('zonpoblacio', 30);
+			$table->string('zoncodi_postal', 45);
+			$table->string('zonpais', 45);
 		});
 	}
 
@@ -28,7 +29,7 @@ class CreateBarRutaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('bar_ruta');
+		Schema::drop('zones');
 	}
 
 }

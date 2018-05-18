@@ -19,7 +19,7 @@ class PubController extends Controller
 
     public function store(Request $request)
     {
-        $pub=Local::create($request->all());
+        $pub=Pub::create($request->all());
         return response()->json($pub, 201);
     }
 

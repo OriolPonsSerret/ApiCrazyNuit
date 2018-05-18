@@ -14,7 +14,7 @@ class CreateUsuarisTable extends Migration {
 	{
 		Schema::create('usuaris', function(Blueprint $table)
 		{
-			$table->integer('idusuaris')->primary();
+			$table->integer('idusuaris', true);
 			$table->string('nom', 45);
 			$table->date('DataNaixement');
 			$table->string('correu_electronic', 45);

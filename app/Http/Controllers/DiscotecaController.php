@@ -19,7 +19,7 @@ class DiscotecaController extends Controller
 
     public function store(Request $request)
     {
-        $discoteca=Local::create($request->all());
+        $discoteca=Disco::create($request->all());
         return response()->json($discoteca, 201);
     }
 

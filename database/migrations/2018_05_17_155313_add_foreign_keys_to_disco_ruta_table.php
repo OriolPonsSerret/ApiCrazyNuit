@@ -14,7 +14,7 @@ class AddForeignKeysToDiscoRutaTable extends Migration {
 	{
 		Schema::table('disco_ruta', function(Blueprint $table)
 		{
-			$table->foreign('iddiscoteca', 'iddiscotecarutes')->references('idDiscoteca')->on('discoteca')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('iddiscoteca', 'iddiscorutes')->references('idDiscoteca')->on('discoteca')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('idrutes', 'idrutesdisco')->references('idrutes')->on('rutes')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
@@ -29,7 +29,7 @@ class AddForeignKeysToDiscoRutaTable extends Migration {
 	{
 		Schema::table('disco_ruta', function(Blueprint $table)
 		{
-			$table->dropForeign('iddiscotecarutes');
+			$table->dropForeign('iddiscorutes');
 			$table->dropForeign('idrutesdisco');
 		});
 	}

@@ -14,9 +14,11 @@ class CreatePenalitzacionsTable extends Migration {
 	{
 		Schema::create('penalitzacions', function(Blueprint $table)
 		{
+			$table->boolean('penid')->primary();
 			$table->string('pentipus', 45);
 			$table->date('pendata_inici')->nullable();
 			$table->date('pendata_final')->nullable();
+			$table->timestamps();
 		});
 	}
 

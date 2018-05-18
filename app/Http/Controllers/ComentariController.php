@@ -19,7 +19,7 @@ class ComentariController extends Controller
 
     public function store(Request $request)
     {
-        $comentari=Local::create($request->all());
+        $comentari=Comentari::create($request->all());
         return response()->json($comentari, 201);
     }
 

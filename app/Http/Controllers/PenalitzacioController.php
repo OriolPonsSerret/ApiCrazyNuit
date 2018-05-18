@@ -19,7 +19,7 @@ class PenalitzacioController extends Controller
 
     public function store(Request $request)
     {
-        $penalitzacio=Local::create($request->all());
+        $penalitzacio=Penalitzacion::create($request->all());
         return response()->json($penalitzacio, 201);
     }
 

@@ -14,7 +14,7 @@ class CreateComentarisTable extends Migration {
 	{
 		Schema::create('comentaris', function(Blueprint $table)
 		{
-			$table->integer('idcomentaris')->primary();
+			$table->integer('idcomentaris', true);
 			$table->string('comtext', 200);
 			$table->boolean('comvaloracio');
 		});

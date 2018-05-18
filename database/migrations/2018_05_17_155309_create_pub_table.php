@@ -14,7 +14,7 @@ class CreatePubTable extends Migration {
 	{
 		Schema::create('pub', function(Blueprint $table)
 		{
-			$table->integer('idPub')->primary();
+			$table->integer('idPub', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();

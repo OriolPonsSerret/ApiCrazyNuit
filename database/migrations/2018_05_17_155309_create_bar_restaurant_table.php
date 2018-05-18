@@ -14,7 +14,7 @@ class CreateBarRestaurantTable extends Migration {
 	{
 		Schema::create('bar_restaurant', function(Blueprint $table)
 		{
-			$table->integer('idBar-Restaurant')->unique('idBar-Restaurant_UNIQUE');
+			$table->integer('idBar-Restaurant', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();

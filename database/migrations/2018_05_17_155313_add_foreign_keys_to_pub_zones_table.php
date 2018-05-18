@@ -14,8 +14,8 @@ class AddForeignKeysToPubZonesTable extends Migration {
 	{
 		Schema::table('pub_zones', function(Blueprint $table)
 		{
-			$table->foreign('IdPub', 'IdPubzones')->references('idPub')->on('pub')->onUpdate('CASCADE')->onDelete('CASCADE');
-			$table->foreign('IdZones', 'IdZonesPub')->references('idzones')->on('zones')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('IdPub', 'idpubzones')->references('idPub')->on('pub')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('IdZones', 'idzonespub')->references('idzones')->on('zones')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 
@@ -29,8 +29,8 @@ class AddForeignKeysToPubZonesTable extends Migration {
 	{
 		Schema::table('pub_zones', function(Blueprint $table)
 		{
-			$table->dropForeign('IdPubzones');
-			$table->dropForeign('IdZonesPub');
+			$table->dropForeign('idpubzones');
+			$table->dropForeign('idzonespub');
 		});
 	}
 

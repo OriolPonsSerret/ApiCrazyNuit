@@ -14,6 +14,6 @@ class Penalitzacion extends Model
     /**
      * @var array
      */
-    protected $fillable = ['pentipus', 'pendata_inici', 'pendata_final'];
+    protected $fillable = ['penid','pentipus', 'pendata_inici', 'pendata_final'];
 
 }

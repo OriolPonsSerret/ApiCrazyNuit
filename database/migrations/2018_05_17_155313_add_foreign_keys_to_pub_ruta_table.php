@@ -15,7 +15,7 @@ class AddForeignKeysToPubRutaTable extends Migration {
 		Schema::table('pub_ruta', function(Blueprint $table)
 		{
 			$table->foreign('idpub', 'idpubruta')->references('idPub')->on('pub')->onUpdate('CASCADE')->onDelete('CASCADE');
-			$table->foreign('idrutes', 'idrutespub')->references('idrutes')->on('rutes')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('idrutes', 'idrutapub')->references('idrutes')->on('rutes')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
 
@@ -30,7 +30,7 @@ class AddForeignKeysToPubRutaTable extends Migration {
 		Schema::table('pub_ruta', function(Blueprint $table)
 		{
 			$table->dropForeign('idpubruta');
-			$table->dropForeign('idrutespub');
+			$table->dropForeign('idrutapub');
 		});
 	}
 

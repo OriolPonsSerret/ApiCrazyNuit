@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $Horari-Tancament
  * @property string $TipusGastronomic
  * @property int $Categoria
+ * @property string $PreuEntrada
  * @property Rute[] $rutes
  * @property Zone[] $zones
  */
@@ -33,16 +34,9 @@ class Disco extends Model
     protected $primaryKey = 'idDiscoteca';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
-    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'Horari-Obertura', 'Horari-Tancament', 'TipusGastronomic', 'Categoria'];
+    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'Horari-Obertura', 'Horari-Tancament', 'TipusGastronomic', 'Categoria', 'PreuEntrada'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

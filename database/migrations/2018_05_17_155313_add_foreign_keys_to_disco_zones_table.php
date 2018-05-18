@@ -14,7 +14,7 @@ class AddForeignKeysToDiscoZonesTable extends Migration {
 	{
 		Schema::table('disco_zones', function(Blueprint $table)
 		{
-			$table->foreign('iddiscoteca', 'iddiscotecazones')->references('idDiscoteca')->on('discoteca')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('iddiscoteca', 'iddiscozones')->references('idDiscoteca')->on('discoteca')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('idzones', 'idzonesdisco')->references('idzones')->on('zones')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}
@@ -29,7 +29,7 @@ class AddForeignKeysToDiscoZonesTable extends Migration {
 	{
 		Schema::table('disco_zones', function(Blueprint $table)
 		{
-			$table->dropForeign('iddiscotecazones');
+			$table->dropForeign('iddiscozones');
 			$table->dropForeign('idzonesdisco');
 		});
 	}
