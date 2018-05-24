@@ -47,7 +47,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/ApiCrazyNuit/public/locals"  class="menu">Ir a Locales</a></li>
+                        <li><a href="/ApiCrazyNuit/public/locals" class="menu">Ir a Locales</a></li>
                         <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Ir a Rutas</a></li>
                     </ul>
                 </div>
@@ -60,7 +60,6 @@
                 
                 <footer class="footer">
                     @yield ('footer')
-                    <p>CrazyNuit &copy; 2018.</p>
                 </footer>
         </div>
 

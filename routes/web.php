@@ -15,7 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/locals', function () {
-    return view('locals/locals');
+Route::get('locals/crear', function (){
+	$BarRestaurant = App\BarRestaurant::all();
+	return view('locals.add')->with ('BarRestaurant', $BarRestaurant);
 });
 
+Route::get('locals/{id}', function ($id){
+	$BarRestaurant = App\BarRestaurant::find($id);
+	return view('locals.show')->with ('BarRestaurant', $BarRestaurant);
+});
