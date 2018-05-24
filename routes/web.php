@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/locals', function () {
+    return view('locals/locals');
+});
+
