@@ -2,7 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property int $idusuaris
@@ -17,8 +18,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property Assoliment[] $assoliments
  * @property Rute[] $rutes
  */
-class Usuari extends Model
+class Usuari extends Authenticatable
 {
+    use Notifiable;
+    
     /**
      * The primary key for the model.
      * 

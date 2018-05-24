@@ -45,7 +45,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+   protected function validator(array $data)
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \llibres\User
      */
     protected function create(array $data)
     {
@@ -69,10 +69,10 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registered(Request $request, $user)
+    protected function registered(Request $request, $usuari)
     {
-        $user->generateToken();
+        $usuari->generateToken();
 
-        return response()->json(['data' => $user->toArray()], 201);
+        return response()->json(['data' => $usuari->toArray()], 201);
     }
 }

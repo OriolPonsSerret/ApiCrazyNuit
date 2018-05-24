@@ -15,10 +15,10 @@ class UsuariController extends Controller
     public function show(Usuari $usuari)
     {
         //$usuari = $request->session()->get('key');
-        $var2 = $usuari->rutes()->get(array('usuaris_rutes.idrutes'));
-        $var3 = $usuari->assoliments()->get(array('usuaris_assoliments.idassoliments'))
         $var1 = $usuari;
-
+        $var2 = $usuari->rutes()->get(array('usuaris_rutes.idrutes'));
+        $var3 = $usuari->assoliments()->get(array('usuaris_assoliments.idassoliments'));
+        
         return array($var1, $var2, $var3);
     }
 
