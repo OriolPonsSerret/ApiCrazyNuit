@@ -12,15 +12,14 @@ class UsuariController extends Controller
         return Usuari::all();
     }
  
-    public function show(Usuari $usuari)//, $id)
+    public function show(Usuari $usuari)
     {
-        //$value = $request->session()->get('key');
-        /*$usuari = DB::table('usuaris')
-            ->join('rutes', 'usuaris.idusuaris', '=', 'rutes.rutcreador')       
-            ->select('rutes.rutnom')
-            ->get();*/
-       
-        return $usuari;
+        //$usuari = $request->session()->get('key');
+        $var2 = $usuari->rutes()->get(array('usuaris_rutes.idrutes'));
+        $var3 = $usuari->assoliments()->get(array('usuaris_assoliments.idassoliments'))
+        $var1 = $usuari;
+
+        return array($var1, $var2, $var3);
     }
 
     public function store(Request $request)
@@ -32,7 +31,6 @@ class UsuariController extends Controller
     public function update(Request $request, Usuari $usuari)
     {
         $usuari->update($request->all());
-
         return response()->json($usuari, 200);
     }
 

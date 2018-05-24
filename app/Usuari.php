@@ -29,7 +29,7 @@ class Usuari extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nom', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'descripcio'];//, 'api_token'];
+    protected $fillable = ['nom', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'descripcio'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -47,11 +47,6 @@ class Usuari extends Model
         return $this->belongsToMany('App\Rute', 'usuaris_rutes', 'idusuaris', 'idrutes');
     }
 
-    public function rutesusuari()
-    {
-        return $this->hasMany('App\Rute');
-    }
-
     public function generateToken()
     {
         $this->api_token = str_random(60);
@@ -59,5 +54,8 @@ class Usuari extends Model
 
         return $this->api_token;
     }
+    /*protected $hidden = [
+        'password', 'api_token',
+    ];*/
 
 }
