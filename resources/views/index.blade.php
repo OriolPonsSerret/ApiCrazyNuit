@@ -1,15 +1,22 @@
 @extends('master')
 @section('titlePage')
-index
+Nou
 @stop
 @section('header')
-
-
-
 @stop
-@section('content')
-<h3>Bienvenidos al portal de gestión de Locales i Rutas de CrazyNuit</h3>
 
+@section('content')  
+
+<div class="navbar navbar-inverse" style="background-color:rgb(255, 255, 255);border-color:#777";>
+    <ul class="nav navbar-nav">
+        <li><a href="/ApiCrazyNuit/public/locals/add" class="menu">Crear Restaurante</a></li>
+        <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Crear Pub</a></li>
+        <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Crear Discoteca</a></li>
+        <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Crear Ruta</a>
+    </ul>  
+</div>                      
+    
 @stop
 @section('footer')
+
 @stop
