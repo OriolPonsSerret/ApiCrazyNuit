@@ -52,7 +52,7 @@ class Rute extends Model
      */
     public function discotecas()
     {
-        return $this->belongsToMany('App\Discoteca', 'disco_ruta', 'idrutes', 'iddiscoteca');
+        return $this->belongsToMany('App\Disco', 'disco_ruta', 'idrutes', 'iddiscoteca');
     }
 
     /**

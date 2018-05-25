@@ -47,7 +47,7 @@ class Zona extends Model
      */
     public function discotecas()
     {
-        return $this->belongsToMany('App\Discoteca', 'disco_zones', 'idzones', 'iddiscoteca');
+        return $this->belongsToMany('App\Disco', 'disco_zones', 'idzones', 'iddiscoteca');
     }
 
     /**

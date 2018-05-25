@@ -50,6 +50,6 @@ class Pub extends Model
      */
     public function zones()
     {
-        return $this->belongsToMany('App\Zone', 'pub_zones', 'IdPub', 'IdZones');
+        return $this->belongsToMany('App\Zona', 'pub_zones', 'IdPub', 'IdZones');
     }
 }

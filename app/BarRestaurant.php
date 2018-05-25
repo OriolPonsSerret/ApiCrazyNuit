@@ -50,6 +50,6 @@ class BarRestaurant extends Model
      */
     public function zones()
     {
-        return $this->belongsToMany('App\Zone', 'bar_zones', 'IdBar_Restaurant', 'IdZones');
+        return $this->belongsToMany('App\Zona', 'bar_zones', 'IdBar_Restaurant', 'IdZones');
     }
 }

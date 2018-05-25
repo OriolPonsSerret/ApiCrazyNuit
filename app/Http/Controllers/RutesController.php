@@ -14,7 +14,14 @@ class RutesController extends Controller
  
     public function show(Rute $rute)
     {
-        return $rute;
+
+        $var1 = $rute;
+        $var2 = $rute->barRestaurants()->get(array('bar_ruta.idbar_restaurant'));
+        $var3 = $rute->discotecas()->get(array('disco_ruta.iddiscoteca'));
+        $var4 = $rute->pubs()->get(array('pub_ruta.idpub'));
+        $var5 = $rute->usuaris()->get(array('usuaris_rutes.idusuaris'));
+
+        return array($var1, $var2, $var3, $var4, $var5);
     }
 
     public function store(Request $request)

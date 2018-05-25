@@ -14,7 +14,11 @@ class DiscotecaController extends Controller
  
     public function show(Disco $discoteca)
     {
-        return $discoteca;
+        $var1 = $discoteca;
+        $var2 = $discoteca->rutes()->get(array('disco_ruta.idrutes'));
+        $var3 = $discoteca->zones()->get(array('disco_zones.idzones'));
+
+        return array($var1, $var2, $var3);
     }
 
     public function store(Request $request)
