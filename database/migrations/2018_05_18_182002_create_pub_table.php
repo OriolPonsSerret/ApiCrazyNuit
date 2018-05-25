@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreatePubTable extends Migration {
 
-	/**
+	/**bars
 	 * Run the migrations.
 	 *
 	 * @return void

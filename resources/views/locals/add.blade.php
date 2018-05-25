@@ -6,7 +6,7 @@ Nou
     <h2>Crear nuevo Restaurante</h2>
 @stop
 @section('content')
-    {!! Form::open(['url' => '/BarRestaurant']) !!}
+    {!! Form::open(['url' => '']) !!}
     <h3>Formulari</h3>
     <div class ="form-group">
         {!! Form::label('lblid', 'ID') !!}

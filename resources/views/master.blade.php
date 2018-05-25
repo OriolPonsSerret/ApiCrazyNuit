@@ -43,12 +43,14 @@
         <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:rgb(255, 255, 255);border-color:#777";>
             <div class="container">
                 <div class="navbar-header">
-                   <a href="http://localhost/ApiCrazyNuit/public/"> <img height="80" height="100" src="https://crazynuit.azurewebsites.net/wp-content/uploads/2018/04/LogoCrazyNuit_burned.png" class="header_logo header-logo" alt="Crazynuit"></a>                   
+                   <a href="http://localhost/ApiCrazyNuit/public/"><img height="80" height="100" src="https://crazynuit.azurewebsites.net/wp-content/uploads/2018/04/LogoCrazyNuit_burned.png" class="header_logo header-logo" alt="Crazynuit"></a>                   
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/ApiCrazyNuit/public/locals" class="menu">Ir a Locales</a></li>
-                        <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Ir a Rutas</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/locals/restaurantes" class="menu">Restaurantes</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/locals/bares" class="menu">Bares</a></li>
+                        <li><a href="/ApiCrazyNuit/public/locals/show" class="menu">Discotecas</a></li>
+                        <li><a href="/ApiCrazyNuit/public/rutas" class="menu">Rutas</a></li>
                     </ul>
                 </div>
             </div>
