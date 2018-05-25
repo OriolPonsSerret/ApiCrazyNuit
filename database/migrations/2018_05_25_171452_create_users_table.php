@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateZonesTable extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateZonesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('zones', function(Blueprint $table)
+		Schema::create('users', function(Blueprint $table)
 		{
-			$table->integer('idzones', true);
-			$table->string('zonpoblacio', 30);
-			$table->string('zoncodi_postal', 45);
-			$table->string('zonpais', 45);
+			$table->increments('id');
+			$table->string('name');
+			$table->string('email');
+			$table->string('password');
+			$table->string('remember_token', 100)->nullable();
 			$table->timestamps();
 		});
 	}
@@ -30,7 +31,7 @@ class CreateZonesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('zones');
+		Schema::drop('users');
 	}
 
 }

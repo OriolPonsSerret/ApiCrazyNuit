@@ -37,7 +37,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     
-    public function login(Request $request)
+    /*public function login(Request $request)
     {
         $this->validateLogin($request);
 
@@ -63,5 +63,5 @@ class LoginController extends Controller
         }
 
         return response()->json(['data' => 'User logged out.'], 200);
-    }
+    }*/
 }

@@ -16,8 +16,8 @@ class CreatePenalitzacionsTable extends Migration {
 		{
 			$table->boolean('penid')->primary();
 			$table->string('pentipus', 45);
-			$table->date('pendata_inici')->nullable();
-			$table->date('pendata_final')->nullable();
+			$table->date('pendatainici')->nullable();
+			$table->date('pendatafinal')->nullable();
 			$table->timestamps();
 		});
 	}

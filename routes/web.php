@@ -24,3 +24,6 @@ Route::get('locals/{id}', function ($id){
 	$BarRestaurant = App\BarRestaurant::find($id);
 	return view('locals.show')->with ('BarRestaurant', $BarRestaurant);
 });
+
+
+

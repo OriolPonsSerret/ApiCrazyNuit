@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDiscotecaTable extends Migration {
+class CreatePubTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,16 @@ class CreateDiscotecaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('discoteca', function(Blueprint $table)
+		Schema::create('pub', function(Blueprint $table)
 		{
-			$table->integer('idDiscoteca', true);
+			$table->integer('idPub', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();
-			$table->dateTime('Horari-Obertura')->nullable();
-			$table->dateTime('Horari-Tancament')->nullable();
+			$table->dateTime('HorariObertura')->nullable();
+			$table->dateTime('HorariTancament')->nullable();
 			$table->string('TipusGastronomic', 45)->nullable();
 			$table->integer('Categoria')->nullable();
-			$table->string('PreuEntrada', 45)->nullable();
 			$table->timestamps();
 		});
 	}
@@ -35,7 +34,7 @@ class CreateDiscotecaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('discoteca');
+		Schema::drop('pub');
 	}
 
 }

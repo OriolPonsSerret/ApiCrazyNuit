@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -20,7 +20,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class Usuari extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
     
     /**
      * The primary key for the model.
@@ -50,15 +50,8 @@ class Usuari extends Authenticatable
         return $this->belongsToMany('App\Rute', 'usuaris_rutes', 'idusuaris', 'idrutes');
     }
 
-    public function generateToken()
-    {
-        $this->api_token = str_random(60);
-        $this->save();
-
-        return $this->api_token;
-    }
     /*protected $hidden = [
-        'password', 'api_token',
+        'password', 'remember_token',
     ];*/
 
 }

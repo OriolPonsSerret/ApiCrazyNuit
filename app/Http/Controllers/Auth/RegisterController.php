@@ -69,10 +69,10 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function registered(Request $request, $usuari)
+    /*protected function registered(Request $request, $usuari)
     {
         $usuari->generateToken();
 
         return response()->json(['data' => $usuari->toArray()], 201);
-    }
+    }*/
 }

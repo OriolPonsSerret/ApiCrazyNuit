@@ -14,14 +14,14 @@ class CreateBarRestaurantTable extends Migration {
 	{
 		Schema::create('bar_restaurant', function(Blueprint $table)
 		{
-			$table->integer('idBar-Restaurant', true);
+			$table->integer('idBarRestaurant', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
-			$table->smallInteger('Valoracio')->nullable();
-			$table->dateTime('Horari-Obertura')->nullable();
-			$table->dateTime('Horari-Tancament')->nullable();
-			$table->string('TipusGastronomic', 45)->nullable();
-			$table->integer('Categoria')->nullable();
+			$table->float('Valoracio', 10, 0)->default(0);
+			$table->dateTime('HorariObertura')->nullable();
+			$table->dateTime('HorariTancament')->nullable();
+			$table->string('TipusGastronomic', 45)->default('Alt');
+			$table->integer('Categoria')->default(1);
 			$table->timestamps();
 		});
 	}

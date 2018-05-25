@@ -15,16 +15,16 @@ class CreateUsuarisTable extends Migration {
 		Schema::create('usuaris', function(Blueprint $table)
 		{
 			$table->integer('idusuaris', true);
-			$table->string('nom', 45);
+			$table->string('name', 45);
 			$table->date('DataNaixement')->nullable();
-			$table->string('correu_electronic', 45);
+			$table->string('email', 45);
 			$table->string('telefon', 9)->nullable();
-			$table->date('data_alta')->nullable();
-			$table->date('data_baixa')->nullable();
+			$table->date('dataAlta')->nullable();
+			$table->date('dataBaixa')->nullable();
 			$table->string('password');
 			$table->string('descripcio', 300)->nullable();
 			$table->timestamps();
-			$table->string('api_token', 60)->nullable()->unique();
+			$table->string('remember_token');
 		});
 	}
 
