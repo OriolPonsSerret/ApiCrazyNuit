@@ -10,7 +10,7 @@ index
 
 @foreach ($BarRestaurant as $barrestaurant)
 	<div class="BarRestaurant">
-		<a href="{{ url('BarRestaurant/' .$barrestaurant->id) }}">
+		<a href="{{ url('BarRestaurant/' .$barrestaurant->idBarRestaurant) }}">
 			<strong>{{ $barrestaurant->Nom }}</strong>
 		</a>
 	</div>

@@ -30,6 +30,13 @@ Route::get('locals/bares', function (){
 });
 
 
+//Veure totes les Discoteques
+Route::get('locals/discotecas', function (){
+	$discotecas = App\Disco::all();
+	return view('locals.indexDiscotecas')->with ('Disco', $discotecas);
+});
+
+
 //Crear Restaurants
 Route::get('locals/crear', function (){
 	$barrestaurant = App\BarRestaurant::all();
@@ -48,4 +55,11 @@ Route::get('BarRestaurant/{id}', function ($id){
 Route::get('Pub/{id}', function ($id){
 	$bars = App\Pub::find($id);
 	return view('locals.showBars')->with ('bars', $bars);
+});
+
+
+//Mostrar informacio de les Discoteques
+Route::get('Disco/{id}', function ($id){
+	$discotecas = App\Disco::find($id);
+	return view('locals.showDiscotecas')->with ('discotecas', $discotecas);
 });

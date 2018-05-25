@@ -3,11 +3,14 @@
 index
 @stop
 @section('header')
-
+	<div>		
+		<a href="{{url('/llibres/'.$bars->id.'/edit')}}">Modificar el Bar</a>
+		<a href="{{url('/llibres/'.$bars->id.'/delete')}}">Eliminar el Bar</a>		
+	</div>
 @stop
 @section('content')
 
-	<h3>Información del local</h3>
+	<h3>Información del local</h3></br>
 	<p><strong>Nombre</strong>: {{$bars->Nom}}</p>
 	<p><strong>Descripción</strong>: {{$bars->Descripcio}}</p>
 	<p><strong>Valoración</strong>: {{$bars->Valoracio}}</p>
