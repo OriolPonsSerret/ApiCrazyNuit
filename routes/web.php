@@ -37,9 +37,10 @@ Route::get('locals/discotecas', function (){
 });
 
 
-//Index de Rutas
-Route::get('rutas', function () {
-    return view('rutas.index');
+//Veure totes les Rutas
+Route::get('/rutas', function (){
+	$rutas = App\Rute::all();
+	return view('rutas.indexRutas')->with ('Rute', $rutas);
 });
 
 
