@@ -19,9 +19,6 @@ Route::post('usuaris', 'UsuariController@store');
 Route::put('usuaris/{usuari}', 'UsuariController@update');
 Route::delete('usuaris/{usuari}', 'UsuariController@delete');
 
-Route::post('login', 'UsuariController@login');
-Route::post('register', 'UsuariController@register');
-
 //rutes d'autenticacio
 /*Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');

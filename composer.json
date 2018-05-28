@@ -9,13 +9,8 @@
         "fideloper/proxy": "~3.3",
         "google/apiclient": "^2.0",
         "laravel/framework": "5.5.*",
-<<<<<<< HEAD
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.5"
-=======
-        "laravel/passport": "4.0.3",
-        "laravel/tinker": "~1.0"
->>>>>>> 5c7de25cf59dcc7e6c2db6c0242c265b7e404f59
     },
     "require-dev": {
         "filp/whoops": "~2.0",
