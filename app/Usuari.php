@@ -50,8 +50,8 @@ class Usuari extends Authenticatable
         return $this->belongsToMany('App\Rute', 'usuaris_rutes', 'idusuaris', 'idrutes');
     }
 
-    /*protected $hidden = [
+    protected $hidden = [
         'password', 'remember_token',
-    ];*/
+    ];
 
 }
