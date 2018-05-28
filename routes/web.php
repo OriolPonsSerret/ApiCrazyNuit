@@ -73,3 +73,8 @@ Route::get('Disco/{id}', function ($id){
 	$discotecas = App\Disco::find($id);
 	return view('locals.showDiscotecas')->with ('discotecas', $discotecas);
 });
+
+Route::resource('BarRestaurant', 'BarRestaurantController');
+
+
+Route::resource('web/pub', 'web\pubController');
