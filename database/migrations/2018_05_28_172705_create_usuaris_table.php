@@ -25,6 +25,7 @@ class CreateUsuarisTable extends Migration {
 			$table->string('descripcio', 300)->nullable();
 			$table->timestamps();
 			$table->string('remember_token');
+			$table->string('api_token', 60)->nullable()->unique();
 		});
 	}
 
