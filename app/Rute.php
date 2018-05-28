@@ -44,7 +44,7 @@ class Rute extends Model
      */
     public function barRestaurants()
     {
-        return $this->belongsToMany('App\BarRestaurant', 'bar_ruta', 'idrutes', 'idbar_restaurant');
+        return $this->belongsToMany('App\BarRestaurant', 'bar_ruta', 'idrutes', 'idbarrestaurant');
     }
 
     /**

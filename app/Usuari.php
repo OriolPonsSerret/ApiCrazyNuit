@@ -7,9 +7,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property int $idusuaris
- * @property string $nom
+ * @property string $name
  * @property string $DataNaixement
- * @property string $correu_electronic
+ * @property string $email
  * @property string $telefon
  * @property string $data_alta
  * @property string $data_baixa
@@ -32,7 +32,7 @@ class Usuari extends Authenticatable
     /**
      * @var array
      */
-    protected $fillable = ['nom', 'DataNaixement', 'correu_electronic', 'telefon', 'data_alta', 'data_baixa', 'password', 'descripcio'];
+    protected $fillable = ['name', 'DataNaixement', 'email', 'telefon', 'data_alta', 'data_baixa', 'password', 'descripcio'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

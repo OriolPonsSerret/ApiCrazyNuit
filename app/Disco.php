@@ -36,7 +36,7 @@ class Disco extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'Horari-Obertura', 'Horari-Tancament', 'TipusGastronomic', 'Categoria', 'PreuEntrada'];
+    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'HorariObertura', 'HorariTancament', 'TipusGastronomic', 'Categoria', 'PreuEntrada'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
