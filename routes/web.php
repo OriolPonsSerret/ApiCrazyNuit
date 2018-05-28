@@ -49,8 +49,8 @@ Route::get('locals/crearbar', function (){
 	return view('locals.addBar')->with ('Pub', $bars);
 });
 
-Route::post('locals', function (){
-	$bars = App\Pub::create(Request::all());
+Route::post('locals/bares', function (){
+	$bars=Pub::create($request->all());
 	return redirect('locals/'.$bars->id);
 });
 
