@@ -66,12 +66,9 @@ Route::get('Pub/{id}', function ($id){
 	return view('locals.showBars')->with ('bars', $bars);
 });
 
-<<<<<<< HEAD
-=======
-
 //Mostrar informacio de les Discoteques
 Route::get('Disco/{id}', function ($id){
 	$discotecas = App\Disco::find($id);
 	return view('locals.showDiscotecas')->with ('discotecas', $discotecas);
 });
->>>>>>> fca4bc1cc8167c71a020c6d1b515764153f8632e
+

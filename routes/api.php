@@ -29,7 +29,6 @@ Route::post('logout', 'Auth\LoginController@logout');
 Route::middleware('auth:api')->get('/usuari', function (Request $request){return $request->usuari();});
 */
 //Route::group(['middleware' => 'auth:api'], function() {
-	Route::post('details', 'API\UserController@details');
 	//Rutes de rutas
 	Route::get('rutes', 'RutesController@index');
 	Route::get('rutes/{rute}', 'RutesController@show');
