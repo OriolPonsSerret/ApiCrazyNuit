@@ -28,8 +28,7 @@ class RutesController extends Controller
     {
         $rute=Rute::create($request->all());
         //crear a la taula Usuaris_Rutes
-        //app('App\Http\Controllers\UsuarisRutesController')->store($request->all());
-
+        //$ur=UsuarisRutes::create($request->all());
         return response()->json($rute, 201);
     }
 
@@ -37,7 +36,7 @@ class RutesController extends Controller
     {
         $rute->update($request->all());
         //upgrade a la taula Usuaris_Rutes
-        
+        //$ur=UsuarisRutes::update($request->all());
         return response()->json($rute, 200);
     }
 
@@ -45,7 +44,7 @@ class RutesController extends Controller
     {
         $rute->delete();
         //delete a la taula Usuaris_Rutes
-        
+        //$ur=UsuarisRutes::delete($request->all());
         return response()->json(null, 204);
     }
 }
