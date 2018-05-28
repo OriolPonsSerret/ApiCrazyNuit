@@ -39,8 +39,8 @@ Route::get('locals/discotecas', function (){
 
 //Veure totes les Rutas
 Route::get('/rutas', function (){
-	$rutas = App\Rute::all();
-	return view('rutas.indexRutas')->with ('Rute', $rutas);
+	$rutes = App\Rute::all();
+	return view('rutas.indexRutas')->with ('Rute', $rutes);
 });
 
 
@@ -50,9 +50,9 @@ Route::get('locals/crearbar', function (){
 	return view('locals.addBar')->with ('Pub', $bars);
 });
 
-Route::post('locals/bares', function (){
-	$bars=Pub::create($request->all());
-	return redirect('locals/'.$bars->id);
+Route::post('locales/bares', function (){
+	$bars = App\Pub::create(Request::all());
+	return redirect('locals/'.$bars->idPub);
 });
 
 

@@ -6,7 +6,7 @@ Nou
     <h2>Crear nuevo Pub</h2>
 @stop
 @section('content')
-    {!! Form::open(['url' => '/']) !!}
+    {!! Form::open(['url' => 'locales/bares']) !!}
     <div class ="form-group">
         {!! Form::label('lblnom', 'Nombre') !!}
         <div class="form-controls">
