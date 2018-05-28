@@ -58,7 +58,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \llibres\User
+     * @return \User
      */
     protected function create(array $data)
     {
@@ -69,10 +69,10 @@ class RegisterController extends Controller
         ]);
     }
 
-    /*protected function registered(Request $request, $usuari)
+    protected function registered(Request $request, $usuari)
     {
         $usuari->generateToken();
 
         return response()->json(['data' => $usuari->toArray()], 201);
-    }*/
+    }
 }
