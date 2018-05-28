@@ -14,7 +14,7 @@ class AddForeignKeysToBarRutaTable extends Migration {
 	{
 		Schema::table('bar_ruta', function(Blueprint $table)
 		{
-			$table->foreign('idbar_restaurant', 'idbar_restaurantrutes')->references('idBar-Restaurant')->on('bar_restaurant')->onUpdate('CASCADE')->onDelete('CASCADE');
+			$table->foreign('idbarrestaurant', 'idbar_restaurantrutes')->references('idBarRestaurant')->on('bar_restaurant')->onUpdate('CASCADE')->onDelete('CASCADE');
 			$table->foreign('idrutes', 'idrutesrestaurant')->references('idrutes')->on('rutes')->onUpdate('CASCADE')->onDelete('CASCADE');
 		});
 	}

@@ -28,7 +28,7 @@ class RutesController extends Controller
     {
         $rute=Rute::create($request->all());
         //crear a la taula Usuaris_Rutes
-        app('App\Http\Controllers\UsuarisRutesController')->store($request->all());
+        //app('App\Http\Controllers\UsuarisRutesController')->store($request->all());
 
         return response()->json($rute, 201);
     }

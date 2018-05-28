@@ -50,6 +50,15 @@ Route::get('locals/crear', function (){
 });
 
 
+Route::get('locals/{id}', function ($id){
+	$BarRestaurant = App\BarRestaurant::find($id);
+	return view('locals.show')->with ('BarRestaurant', $BarRestaurant);
+});
+
+
+
+
+
 //Mostrar informacio de Restaurants
 Route::get('BarRestaurant/{id}', function ($id){
 	$barrestaurant = App\BarRestaurant::find($id);
@@ -63,9 +72,12 @@ Route::get('Pub/{id}', function ($id){
 	return view('locals.showBars')->with ('bars', $bars);
 });
 
+<<<<<<< HEAD
+=======
 
 //Mostrar informacio de les Discoteques
 Route::get('Disco/{id}', function ($id){
 	$discotecas = App\Disco::find($id);
 	return view('locals.showDiscotecas')->with ('discotecas', $discotecas);
 });
+>>>>>>> fca4bc1cc8167c71a020c6d1b515764153f8632e
