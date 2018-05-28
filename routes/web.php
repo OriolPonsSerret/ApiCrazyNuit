@@ -37,10 +37,16 @@ Route::get('locals/discotecas', function (){
 });
 
 
-//Crear Restaurants
+//Index de Rutas
+Route::get('rutas', function () {
+    return view('rutas.index');
+});
+
+
+//Crear Bars
 Route::get('locals/crear', function (){
-	$barrestaurant = App\BarRestaurant::all();
-	return view('locals.add')->with ('BarRestaurant', $barrestaurant);
+	$bars = App\Pub::all();
+	return view('locals.add')->with ('Pub', $bars);
 });
 
 
