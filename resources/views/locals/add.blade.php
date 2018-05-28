@@ -3,62 +3,44 @@
 Nou
 @stop
 @section('header')
-    <h2>Crear nuevo Restaurante</h2>
+    <h2>Crear nuevo Pub</h2>
 @stop
 @section('content')
-    {!! Form::open(['url' => '']) !!}
-    <h3>Formulari</h3>
+    {!! Form::open(['url' => '/pub']) !!}
     <div class ="form-group">
-        {!! Form::label('lblid', 'ID') !!}
-        <div class="form-controls">
-            {!! Form::text('idBar-Restaurant', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-    <div class="form-group">
         {!! Form::label('lblnom', 'Nombre') !!}
         <div class="form-controls">
-            {!! Form::date('Nom', null, ['class' => 'form-control']) !!}
+            {!! Form::text('Nom', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-        <div class="form-group">
-            {!! Form::label('lbldescripcio', 'Descripción') !!}
+    <div class ="form-group">
+        {!! Form::label('lbldescripcio', 'Descripcio') !!}
         <div class="form-controls">
-            {!! Form::select('Descripcio', null, ['class' => 'form-control']) !!}
+            {!! Form::text('Descripcio', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-    </div>
-        <div class="form-group">
-            {!! Form::label('lblvaloracio', 'Valoración') !!}
+    <div class ="form-group">
+        {!! Form::label('lblvaloracio', 'Valoracio') !!}
         <div class="form-controls">
-            {!! Form::select('Valoracio', null, ['class' => 'form-control']) !!}
+            {!! Form::text('Valoracio', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-    </div>
-        <div class="form-group">
-            {!! Form::label('lblHorariObert', 'Horario de Abertura') !!}
+    <div class ="form-group">
+        {!! Form::label('lblhorariobertura', 'HorariObertura') !!}
         <div class="form-controls">
-            {!! Form::select('Horari-Obertura', null, ['class' => 'form-control']) !!}
+            {!! Form::text('HorariObertura', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-    </div>
-        <div class="form-group">
-            {!! Form::label('lblHorariTancat', 'Horario de Cierre') !!}
+    <div class ="form-group">
+        {!! Form::label('lblhoraritancament', 'HorariTancament') !!}
         <div class="form-controls">
-            {!! Form::select('Horari-Tancament', null, ['class' => 'form-control']) !!}
+            {!! Form::text('HorariTancament', null, ['class' => 'form-control']) !!}
         </div>
     </div>
-    </div>
-        <div class="form-group">
-            {!! Form::label('lblTipusGastronomic', 'Tipo Gastronomico') !!}
+    <div class ="form-group">
+        {!! Form::label('lbltipusgastronomic', 'TipusGastronomic') !!}
         <div class="form-controls">
-            {!! Form::select('TipusGastronomic', null, ['class' => 'form-control']) !!}
-        </div>
-    </div>
-    </div>
-        <div class="form-group">
-            {!! Form::label('lblCategoria', 'Categoria') !!}
-        <div class="form-controls">
-            {!! Form::select('Categoria', null, ['class' => 'form-control']) !!}
+            {!! Form::text('TipusGastronomic', null, ['class' => 'form-control']) !!}
         </div>
     </div>
     {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
@@ -66,5 +48,4 @@ Nou
     
 @stop
 @section('footer')
-<h3>App development</h3>
 @stop
