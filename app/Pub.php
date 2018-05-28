@@ -35,7 +35,7 @@ class Pub extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'Horari-Obertura', 'Horari-Tancament', 'TipusGastronomic', 'Categoria'];
+    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'HorariObertura', 'HorariTancament', 'TipusGastronomic', 'Categoria'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -29,7 +29,7 @@ class BarRuta extends Model
      */
     public function barRestaurant()
     {
-        return $this->belongsTo('App\BarRestaurant', 'idbar_restaurant', 'idBar-Restaurant');
+        return $this->belongsTo('App\BarRestaurant', 'idbarrestaurant', 'idBarRestaurant');
     }
 
     /**

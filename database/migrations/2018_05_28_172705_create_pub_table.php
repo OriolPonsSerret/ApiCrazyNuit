@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreatePubTable extends Migration {
 
-	/**bars
+	/**
 	 * Run the migrations.
 	 *
 	 * @return void
@@ -17,11 +17,11 @@ class CreatePubTable extends Migration {
 			$table->integer('idPub', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
-			$table->smallInteger('Valoracio')->nullable();
+			$table->smallInteger('Valoracio')->default(0);
 			$table->dateTime('HorariObertura')->nullable();
 			$table->dateTime('HorariTancament')->nullable();
-			$table->string('TipusGastronomic', 45)->nullable();
-			$table->integer('Categoria')->nullable();
+			$table->string('TipusGastronomic', 45)->default('Alt');
+			$table->integer('Categoria')->default(0);
 			$table->timestamps();
 		});
 	}

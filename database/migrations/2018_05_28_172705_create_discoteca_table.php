@@ -17,12 +17,12 @@ class CreateDiscotecaTable extends Migration {
 			$table->integer('idDiscoteca', true);
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
-			$table->smallInteger('Valoracio')->nullable();
+			$table->smallInteger('Valoracio')->default(0);
 			$table->dateTime('HorariObertura')->nullable();
 			$table->dateTime('HorariTancament')->nullable();
-			$table->string('TipusGastronomic', 45)->nullable();
-			$table->integer('Categoria')->nullable();
-			$table->string('PreuEntrada', 45)->nullable();
+			$table->string('TipusGastronomic', 45)->default('Alt');
+			$table->integer('Categoria')->default(0);
+			$table->string('PreuEntrada', 45)->default('0.0');
 			$table->timestamps();
 		});
 	}

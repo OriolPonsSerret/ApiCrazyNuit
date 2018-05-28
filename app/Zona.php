@@ -32,7 +32,7 @@ class Zona extends Model
     /**
      * @var array
      */
-    protected $fillable = ['zonpoblacio', 'zoncodi_postal', 'zonpais'];
+    protected $fillable = ['zonpoblacio', 'zoncodiPostal', 'zonpais'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
