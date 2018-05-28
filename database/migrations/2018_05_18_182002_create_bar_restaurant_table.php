@@ -18,8 +18,8 @@ class CreateBarRestaurantTable extends Migration {
 			$table->string('Nom', 45);
 			$table->string('Descripcio', 200);
 			$table->smallInteger('Valoracio')->nullable();
-			$table->dateTime('HorariObertura')->nullable();
-			$table->dateTime('HorariTancament')->nullable();
+			$table->dateTime('Horari-Obertura')->nullable();
+			$table->dateTime('Horari-Tancament')->nullable();
 			$table->string('TipusGastronomic', 45)->nullable();
 			$table->integer('Categoria')->nullable();
 			$table->timestamps();
