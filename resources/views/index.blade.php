@@ -12,9 +12,10 @@ Nou
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/crearrestaurant" class="menu">Crear Restaurante</a></li>
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/crearbar" class="menu">Crear Pub</a></li>
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/creardiscoteca" class="menu">Crear Discoteca</a></li>
+        <li><a href="/ApiCrazyNuit/public/locals/add" class="menu">Crear rutas</a></li>
     </ul>  
-</div>                      
-    
+</div>   
+
 @stop
 @section('footer')
 

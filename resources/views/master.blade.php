@@ -48,7 +48,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="http://localhost/ApiCrazyNuit/public/locals/restaurantes" class="menu">Restaurantes</a></li>
-                        <li><a href="http://localhost/ApiCrazyNuit/public/locals/bares" class="menu">Bares</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/locals/bares" class="menu">Pubs</a></li>
                         <li><a href="http://localhost/ApiCrazyNuit/public/locals/discotecas" class="menu">Discotecas</a></li>
                         <li><a href="http://localhost/ApiCrazyNuit/public/rutas" class="menu">Rutas</a></li>
                     </ul>
