@@ -36,5 +36,34 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function login(Request $request)
+    {
+
+        $this->validateLogin($request);
+
+        if ($this->attemptLogin($request)) {
+            $usuari = $this->guard()->Usuari();
+            $usuari->generateToken();
+
+            return response()->json([
+                'data' => $usuari->toArray(),
+            ]);
+        }
+
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    public function logout(Request $request)
+    {
+        $usuari = Auth::guard('api')->Usuari();
+
+        if ($usuari) {
+            $usuari->api_token = null;
+            $usuari->save();
+        }
+
+        return response()->json(['data' => 'User logged out.'], 200);
+    }
     
 }

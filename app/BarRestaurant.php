@@ -30,19 +30,19 @@ class BarRestaurant extends Model
      * 
      * @var string
      */
-    protected $primaryKey = 'idBar-Restaurant';
+    protected $primaryKey = 'idBarRestaurant';
 
     /**
      * @var array
      */
-    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'Horari-Obertura', 'Horari-Tancament', 'TipusGastronomic', 'Categoria'];
+    protected $fillable = ['Nom', 'Descripcio', 'Valoracio', 'HorariObertura', 'HorariTancament', 'TipusGastronomic', 'Categoria'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function rutes()
     {
-        return $this->belongsToMany('App\Rute', 'bar_ruta', 'idbar_restaurant', 'idrutes');
+        return $this->belongsToMany('App\Rute', 'bar_ruta', 'idbarrestaurant', 'idrutes');
     }
 
     /**
@@ -50,6 +50,6 @@ class BarRestaurant extends Model
      */
     public function zones()
     {
-        return $this->belongsToMany('App\Zona', 'bar_zones', 'IdBar_Restaurant', 'IdZones');
+        return $this->belongsToMany('App\Zona', 'bar_zones', 'IdBarRestaurant', 'IdZones');
     }
 }
