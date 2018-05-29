@@ -100,6 +100,12 @@ Route::get('Disco/{id}', function ($id){
 });
 
 
+//Mostrar informacio de les Rutes
+Route::get('Rutes/{id}', function ($id){
+	$rutes = App\Rutes::find($id);
+	return view('rutas.showRutas')->with ('Rute', $rutes);
+});
+
 //Eliminar Bars
 Route::get('Pub/{id}/delete', function ($id) {
 	$bars = App\Pub::find($id);
