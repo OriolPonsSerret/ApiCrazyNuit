@@ -4,8 +4,8 @@ index
 @stop
 @section('header')
 	<div>		
-		<a href="{{url('/llibres/'.$bars->id.'/edit')}}">Modificar el Bar</a>
-		<a href="{{url('/llibres/'.$bars->id.'/delete')}}">Eliminar el Bar</a>		
+		<a href="{{url('/Pub/'.$bars->idPub.'/edit')}}">Modificar el Bar</a>
+		<a href="{{url('/Pub/'.$bars->idPub.'/delete')}}">Eliminar el Bar</a>		
 	</div>
 @stop
 @section('content')

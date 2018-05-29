@@ -1,51 +1,50 @@
-@extends('master')
+@extends ('master')
 @section('titlePage')
 Nou
 @stop
 @section('header')
-    <h2>Crear nueva Discoteca</h2>
+	<h2>Editar Bar</h2>
 @stop
 @section('content')
-    {!! Form::open(['url' => 'locales/discotecas']) !!}
-    <div class ="form-group">
+	{!! Form::open(['url'=>'/Pub/'.$bars->idPub, 'method'=>'put'])!!}
+	<div class="from-group">
         {!! Form::label('lblnom', 'Nombre') !!}
-        <div class="form-controls">
-            {!! Form::text('Nom', null, ['class' => 'form-control']) !!}
+        <div class="from-controls">
+            {!! Form::text('Nom', $bars->Nom, ['class'=>'form-control'])!!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbldescripcio', 'Descripción') !!}
         <div class="form-controls">
-            {!! Form::text('Descripcio', null, ['class' => 'form-control']) !!}
+            {!! Form::text('Descripcio', $bars->Descripcio, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lblvaloracio', 'Valoración') !!}
         <div class="form-controls">
-            {!! Form::text('Valoracio', null, ['class' => 'form-control']) !!}
+            {!! Form::text('Valoracio', $bars->Valoracio, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lblhorariobertura', 'Horario de Apertura') !!}
         <div class="form-controls">
-            {!! Form::text('HorariObertura', null, ['class' => 'form-control']) !!}
+            {!! Form::text('HorariObertura', $bars->HoraObertura, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lblhoraritancament', 'Horario de Cierre') !!}
         <div class="form-controls">
-            {!! Form::text('HorariTancament', null, ['class' => 'form-control']) !!}
+            {!! Form::text('HorariTancament', $bars->HorariTancament, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
-        {!! Form::label('lblpreuentrada', 'Precio Entrada') !!}
+        {!! Form::label('lbltipusgastronomic', 'Tipo Gastronomico') !!}
         <div class="form-controls">
-            {!! Form::text('PreuEntrada', null, ['class' => 'form-control']) !!}
+            {!! Form::text('TipusGastronomic', $bars->TipusGastronomic, ['class' => 'form-control']) !!}
         </div>
     </div>
-    {!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
-    {!! Form::close() !!}
-    
+	{!! Form::submit('Guardar', ['class'=>'btn btn-primary'])!!}
+	{!! Form::close() !!}
 @stop
 @section('footer')
 @stop

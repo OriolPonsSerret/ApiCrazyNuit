@@ -4,8 +4,8 @@ index
 @stop
 @section('header')
 	<div>
-		<a href="{{url('/llibres/'.$barrestaurant->id.'/edit')}}">Modificar el Restaurante</a>	
-		<a href="{{url('/llibres/'.$barrestaurant->id.'/delete')}}">Eliminar el Restaurante</a>
+		<a href="{{url('/BarRestaurant/'.$barrestaurant->idBarRestaurant.'/edit')}}">Modificar el Restaurante</a>	
+		<a href="{{url('/BarRestaurant/'.$barrestaurant->idBarRestaurant.'/delete')}}">Eliminar el Restaurante</a>
 	</div>
 @stop
 @section('content')

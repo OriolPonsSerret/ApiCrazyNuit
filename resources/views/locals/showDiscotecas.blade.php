@@ -4,8 +4,8 @@ index
 @stop
 @section('header')
 	<div>
-		<a href="{{url('/llibres/'.$discotecas->id.'/edit')}}">Modificar la Discoteca</a>	
-		<a href="{{url('/llibres/'.$discotecas->id.'/delete')}}">Eliminar la Discoteca</a>
+		<a href="{{url('/Disco/'.$discotecas->idDiscoteca.'/edit')}}">Modificar la Discoteca</a>	
+		<a href="{{url('/Disco/'.$discotecas->idDiscoteca.'/delete')}}">Eliminar la Discoteca</a>
 	</div>
 @stop
 @section('content')
@@ -16,7 +16,6 @@ index
 	<p><strong>Valoración</strong>: {{$discotecas->Valoracio}}</p>
 	<p><strong>Horario de Apertura</strong>: </p>
 	<p><strong>Horario de Cierre</strong>: </p>
-	<p><strong>Tipo Gastronomico</strong>: {{$discotecas->TipusGastronomic}}</p>
 	<p><strong>Categoria</strong>: {{$discotecas->Categoria}}</p>
 	<p><strong>Precio Entrada</strong>: {{$discotecas->PreuEntrada}}</p>
 
