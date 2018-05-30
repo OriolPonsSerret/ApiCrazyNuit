@@ -10,7 +10,7 @@ Nou
 
 @foreach ($Rute as $rutes)
 	<div class="Rute">
-		<a href="{{ url('Rute/' .$rutes->idrutes) }}">
+		<a href="{{ url('Rutes/' .$rutes->idrutes) }}">
 			<strong>{{ $rutes->rutnom }}</strong>
 		</a>
 	</div>
