@@ -7,26 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $idrutes
  * @property int $rutmida
- * @property string $rutlocals
+ * @property string $rutpubs
+ * @property string $rutbars
+ * @property string $rutdiscos
  * @property string $rutdata
  * @property integer $rutvaloracio
  * @property string $rutnom
  * @property int $rutcreador
  * @property string $rutdescripcio
+ * @property string $created_at
+ * @property string $updated_at
  * @property BarRestaurant[] $barRestaurants
  * @property Discoteca[] $discotecas
  * @property Pub[] $pubs
- * @property Usuari[] $usuaris
+ * @property UsuarisRute[] $usuarisRutes
  */
 class Rute extends Model
 {
-    /**
-     * The table associated with the model.
-     * 
-     * @var string
-     */
-    protected $table = 'rutes';
-
     /**
      * The primary key for the model.
      * 
@@ -37,7 +34,7 @@ class Rute extends Model
     /**
      * @var array
      */
-    protected $fillable = ['rutmida', 'rutlocals', 'rutdata', 'rutvaloracio', 'rutnom', 'rutcreador', 'rutdescripcio'];
+    protected $fillable = ['rutmida', 'rutpubs', 'rutbars', 'rutdiscos', 'rutdata', 'rutvaloracio', 'rutnom', 'rutcreador', 'rutdescripcio', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -52,7 +49,7 @@ class Rute extends Model
      */
     public function discotecas()
     {
-        return $this->belongsToMany('App\Disco', 'disco_ruta', 'idrutes', 'iddiscoteca');
+        return $this->belongsToMany('App\Discoteca', 'disco_ruta', 'idrutes', 'iddiscoteca');
     }
 
     /**
@@ -64,10 +61,10 @@ class Rute extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function usuaris()
+    public function usuarisRutes()
     {
-        return $this->belongsToMany('App\Usuari', 'usuaris_rutes', 'idrutes', 'idusuaris');
+        return $this->hasMany('App\UsuarisRute', 'idrutes', 'idrutes');
     }
 }
