@@ -218,7 +218,10 @@ Route::put('Discotecas/{id}', function ($id){
 //Editar Ruta
 Route::get('Ruta/{id}/edit', function ($id){
 	$rutes = App\Rute::find($id);
-    return view('rutas.editRutas')->with('rutes', $rutes);
+	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
+	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
+	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
+	return view('rutas.editRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas);
 });
 
 Route::put('Ruta/{id}', function ($id){
@@ -226,7 +229,3 @@ Route::put('Ruta/{id}', function ($id){
 	$rutes->update(Request::all());
 	return redirect('Rutes/'.$rutes->idrutes);
 });
-
-Route::resource('BarRestaurant', 'BarRestaurantController');
-
-Route::resource('web/pub', 'web\pubController');

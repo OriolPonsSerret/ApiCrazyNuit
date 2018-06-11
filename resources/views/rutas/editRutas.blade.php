@@ -6,7 +6,7 @@ Nou
 	<h2>Editar Ruta</h2>
 @stop
 @section('content')
-	{!! Form::open(['url'=>'/Ruta/'.$rutes->idrutes, 'method'=>'put'])!!}
+	{!! Form::open(['url'=>'/Ruta/ '.$rutes->idrutes, 'method'=>'put'])!!}
 	<div class="from-group">
         {!! Form::label('lblnom', 'Nombre') !!}
         <div class="from-controls">
@@ -34,19 +34,19 @@ Nou
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Bares') !!}
         <div class="form-controls">
-            {!! Form::select('rutpubs', $rutes->rutpubs, null, ['class' => 'form-control']) !!}
+            {!! Form::select('rutpubs', $rutes, $bars->rutpubs, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Restaurantes') !!}
         <div class="form-controls">
-            {!! Form::select('rutbars', $rutes->rutbars, null, ['class' => 'form-control']) !!}
+            {!! Form::select('rutbars', $rutes, $barrestaurant->rutbars, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Discotecas') !!}
         <div class="form-controls">
-            {!! Form::select('rutdiscos', $rutes->rutdiscos, null, ['class' => 'form-control']) !!}
+            {!! Form::select('rutdiscos', $rutes, $discotecas->rutdiscos, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
@@ -58,7 +58,7 @@ Nou
     <div class ="form-group">
         {!! Form::label('lblfecha', 'Fecha de creación') !!}
         <div class="form-controls">
-            {!! Form::date('rutdata', $rutes->rutdata, ['required'], ['class' => 'form-control']) !!}
+            {!! Form::date('rutdata', $rutes->rutdata, ['class' => 'form-control']) !!}
         </div>
     </div> 
 	{!! Form::submit('Guardar', ['class'=>'btn btn-primary'])!!}
