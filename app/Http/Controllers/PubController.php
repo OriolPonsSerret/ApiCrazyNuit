@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pub;
+use App\Rute;
+use App\Zona;
 
 class PubController extends Controller
 {
@@ -14,7 +16,20 @@ class PubController extends Controller
  
     public function show(Pub $pub)
     {
-        return $pub;
+        $var1 = $pub;
+        $var2 = $pub->rutes()->get(array('pub_ruta.idrutes'));
+        $ruta = array();
+        foreach ($var2 as $ruta2){
+            $arrayrutes = array_push( $ruta,  Rute::find($ruta2->idrutes));
+        }
+
+        $var3 = $pub->zones()->get(array('pub_zones.idzones'));
+        $zona = array();
+        foreach ($var2 as $zona2){
+            $arrayzones = array_push( $zona,  Zona::find($zona2->idzones));
+        }
+
+        return array($var1, $ruta, $zona);
     }
 
     public function store(Request $request)

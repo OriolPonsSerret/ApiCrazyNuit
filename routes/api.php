@@ -32,6 +32,8 @@ Route::middleware('auth:api')->get('/usuari', function (Request $request){return
 	Route::post('rutes', 'RutesController@store');
 	Route::put('rutes/{rute}', 'RutesController@update');
 	Route::delete('rutes/{rute}', 'RutesController@delete');
+	//Tipus de rutes
+	Route::get('rutestipus', 'RutesTipusController@index');
 	//Rutes de pubs
 	Route::get('pubs', 'PubController@index');
 	Route::get('pubs/{pub}', 'PubController@show');
