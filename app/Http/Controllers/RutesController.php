@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rute;
+use App\Usuari;
 use App\UsuarisRutes;
+use App\BarRestaurant;
+use App\Disco;
+use App\Pub;
 
 class RutesController extends Controller
 {
@@ -17,31 +21,49 @@ class RutesController extends Controller
     {
 
         $var1 = $rute;
-        $var2 = $rute->barRestaurants()->get(array('bar_ruta.idbar_restaurant'));
+        $var2 = $rute->barRestaurants()->get(array('bar_ruta.idBarRestaurant'));
+        $barRestaurant = array();
+        foreach ($var2 as $barRestaurant2){
+            $arraybar = array_push( $barRestaurant, BarRestaurant::find($barRestaurant2->idBarRestaurant));
+        }
 
-        $var3 = $rute->discotecas()->get(array('disco_ruta.iddiscoteca'));
+        $var3 = $rute->discotecas()->get(array('disco_ruta.idDiscoteca'));
+        $disco = array();
+        foreach ($var3 as $disco2){
+            $arraydisco = array_push( $disco, Disco::find($disco2->idDiscoteca));
+        }
+
         $var4 = $rute->pubs()->get(array('pub_ruta.idpub'));
-        $var5 = $rute->usuaris()->get(array('usuaris_rutes.idusuaris'));
+        $pub = array();
+        foreach ($var3 as $pub2){
+            $arraypub = array_push( $pub, Pub::find($pub2->idpub));
+        }
 
-        return array($var1, $var2, $var3, $var4, $var5);
+        $var5 = $rute->usuaris()->get(array('usuaris_rutes.idusuaris'));
+        $usuari = array();
+        foreach ($var3 as $usuari2){
+            $arrayusuaris = array_push( $usuari, Usuari::find($usuari2->idusuaris));
+        }
+
+        return array($var1,$barRestaurant,$disco,$pub,$usuari);
     }
 
     public function store(Request $request)
     {
-        $rute=Rute::create($request->all());
+        $rute = Rute::create($request->all());
         //crear a la taula Usuaris_Rutes
-        $arrayrutes = array();
-        array_push($arrayrutes, $rute->rutcreador);
-        array_push($arrayrutes, $rute->idrutes);
-        $RU=UsuarisRutes::create($arrayrutes);
-        return response()->json($RU, $rute, 201);
+        //$arrayrutes = array();
+        //array_push($arrayrutes, $rute->rutcreador);
+        //array_push($arrayrutes, $rute->idrutes);
+        //$RU=UsuarisRutes::create($arrayrutes);
+        //return response()->json($RU, $rute, 201);
+        return response()->json($rute, 201);
     }
 
     public function update(Request $request, Rute $rute)
     {
         $rute->update($request->all());
         //upgrade a la taula Usuaris_Rutes
-        //$ur=UsuarisRutes::update($request->all());
         return response()->json($rute, 200);
     }
 
@@ -49,7 +71,7 @@ class RutesController extends Controller
     {
         $rute->delete();
         //delete a la taula Usuaris_Rutes
-        //$ur=UsuarisRutes::delete($request->all());
+        //$RU=UsuarisRutes::delete($rute);
         return response()->json(null, 204);
     }
 }
