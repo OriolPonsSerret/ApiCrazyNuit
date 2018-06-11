@@ -15,8 +15,11 @@ index
 	<p><strong>Descripción</strong>: {{$rutes->rutdescripcio}}</p>
 	<p><strong>Creador</strong>: {{$rutes->rutcreador}}</p>
 	<p><strong>Mida</strong>: {{$rutes->rutmida}}</p>
-	<p><strong>Locales</strong>: {{$rutes->rutlocals}} </p>
-	<p><strong>Valoracion</strong>: {{$rutes->rutvaloracio}}</p>
+	<p><strong>Bars</strong>: {{$rutes->rutpubs}}</p>
+	<p><strong>Restaurantes</strong>: {{$rutes->rutbars}}</p>
+	<p><strong>Discotecas</strong>: {{$rutes->rutdiscos}}</p>
+	<p><strong>Valoracion</strong>: {{$rutes->rutvaloracio}}</p>	
+	<p><strong>Fecha</strong>: {{$rutes->rutdata}}</p>
 @stop
 @section('footer')
 @stop

@@ -32,9 +32,21 @@ Nou
         </div>
     </div>
     <div class ="form-group">
-        {!! Form::label('lbllocales', 'Locales') !!}
+        {!! Form::label('lbllocales', 'Bares') !!}
         <div class="form-controls">
-            {!! Form::text('rutlocals', $rutes->rutlocals, ['class' => 'form-control']) !!}
+            {!! Form::select('rutpubs', $rutes->rutpubs, null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class ="form-group">
+        {!! Form::label('lbllocales', 'Restaurantes') !!}
+        <div class="form-controls">
+            {!! Form::select('rutbars', $rutes->rutbars, null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class ="form-group">
+        {!! Form::label('lbllocales', 'Discotecas') !!}
+        <div class="form-controls">
+            {!! Form::select('rutdiscos', $rutes->rutdiscos, null, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
@@ -43,6 +55,12 @@ Nou
             {!! Form::text('rutvaloracio', $rutes->rutvaloracio, ['class' => 'form-control']) !!}
         </div>
     </div>
+    <div class ="form-group">
+        {!! Form::label('lblfecha', 'Fecha de creación') !!}
+        <div class="form-controls">
+            {!! Form::date('rutdata', $rutes->rutdata, ['required'], ['class' => 'form-control']) !!}
+        </div>
+    </div> 
 	{!! Form::submit('Guardar', ['class'=>'btn btn-primary'])!!}
 	{!! Form::close() !!}
 @stop
