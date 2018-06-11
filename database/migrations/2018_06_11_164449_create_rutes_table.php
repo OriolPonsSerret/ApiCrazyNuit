@@ -22,7 +22,7 @@ class CreateRutesTable extends Migration {
 			$table->date('rutdata')->nullable();
 			$table->smallInteger('rutvaloracio')->nullable();
 			$table->string('rutnom', 100);
-			$table->integer('rutcreador');
+			$table->string('rutcreador', 50);
 			$table->string('rutdescripcio', 500)->nullable();
 			$table->timestamps();
 		});
