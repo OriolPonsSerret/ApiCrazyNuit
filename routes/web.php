@@ -80,6 +80,21 @@ Route::post('locales/discotecas', function (){
 });
 
 
+//Crear Rutas
+
+Route::get('rutas/crearruta', function (){
+	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
+	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
+	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
+	return view('rutas.addRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas);
+});
+
+Route::post('rutas/ruta', function (){
+	$rutes = App\Rute::create(Request::all());
+	return redirect('Rutes/'.$rutes->idrutes);
+});
+
+
 //Mostrar informacio de Restaurants
 Route::get('BarRestaurant/{id}', function ($id){
 	$barrestaurant = App\BarRestaurant::find($id);
@@ -102,8 +117,8 @@ Route::get('Disco/{id}', function ($id){
 
 //Mostrar informacio de les Rutes
 Route::get('Rutes/{id}', function ($id){
-	$rutes = App\Rutes::find($id);
-	return view('rutas.showRutas')->with ('Rute', $rutes);
+	$rutes = App\Rute::find($id);
+	return view('rutas.showRutas')->with ('rutes', $rutes);
 });
 
 //Eliminar Bars
@@ -148,6 +163,20 @@ Route::delete('Disco/{id}', function($id) {
 });
 
 
+//Eliminar Rutas
+Route::get('Ruta/{id}/delete', function ($id) {
+	$rutes = App\Rute::find($id);
+    return view('rutas.deleteRutas')->with('rutes', $rutes);
+});
+
+Route::delete('Ruta/{id}', function($id) {
+	$rutes = App\Rute::find($id);
+	$rutes->delete();
+	$rutes = App\Rute::all();
+    return view('rutas.indexRutas')->with ('Rute', $rutes);
+});
+
+
 //Editar Bars
 Route::get('Pub/{id}/edit', function ($id){
 	$bars = App\Pub::find($id);
@@ -184,6 +213,18 @@ Route::put('Discotecas/{id}', function ($id){
 	$discotecas = App\Disco::find($id);
 	$discotecas->update(Request::all());
 	return redirect('Discotecas/'.$discotecas->idDiscoteca);
+});
+
+//Editar Ruta
+Route::get('Ruta/{id}/edit', function ($id){
+	$rutes = App\Rute::find($id);
+    return view('rutas.editRutas')->with('rutes', $rutes);
+});
+
+Route::put('Ruta/{id}', function ($id){
+	$rutes = App\Rute::find($id);
+	$rutes->update(Request::all());
+	return redirect('Rutes/'.$rutes->idrutes);
 });
 
 Route::resource('BarRestaurant', 'BarRestaurantController');
