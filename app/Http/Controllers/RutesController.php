@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Rute;
+use App\UsuarisRutes;
 
 class RutesController extends Controller
 {
@@ -17,6 +18,7 @@ class RutesController extends Controller
 
         $var1 = $rute;
         $var2 = $rute->barRestaurants()->get(array('bar_ruta.idbar_restaurant'));
+
         $var3 = $rute->discotecas()->get(array('disco_ruta.iddiscoteca'));
         $var4 = $rute->pubs()->get(array('pub_ruta.idpub'));
         $var5 = $rute->usuaris()->get(array('usuaris_rutes.idusuaris'));
@@ -28,8 +30,11 @@ class RutesController extends Controller
     {
         $rute=Rute::create($request->all());
         //crear a la taula Usuaris_Rutes
-        //$ur=UsuarisRutes::create($request->all());
-        return response()->json($rute, 201);
+        $arrayrutes = array();
+        array_push($arrayrutes, $rute->rutcreador);
+        array_push($arrayrutes, $rute->idrutes);
+        $RU=UsuarisRutes::create($arrayrutes);
+        return response()->json($RU, $rute, 201);
     }
 
     public function update(Request $request, Rute $rute)

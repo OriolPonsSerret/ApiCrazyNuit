@@ -15,7 +15,7 @@ class UsuarisRutes extends Model
     /**
      * @var array
      */
-    protected $fillable = [];
+    protected $fillable = ['idusuaris', 'idrutes'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

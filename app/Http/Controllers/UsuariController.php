@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Usuari;
+use App\Rute;
+use App\Assoliment;
 use Validator;
 
 class UsuariController extends Controller
@@ -15,17 +17,25 @@ class UsuariController extends Controller
  
     public function show(Usuari $usuari)
     {
-        //$usuari = $request->session()->get('key');
         $var1 = $usuari;
+
         $var2 = $usuari->rutes()->get(array('usuaris_rutes.idrutes'));
+        $ruta = array();
+        foreach ($var2 as $ruta2){
+            $arrayrutes = array_push( $ruta,  Rute::find($ruta2->idrutes));
+        }
+
         $var3 = $usuari->assoliments()->get(array('usuaris_assoliments.idassoliments'));
-        
-        return array($var1, $var2, $var3);
+        $assoliment = array();
+        foreach ($var3 as $asso2){
+            $arrayassoliment = array_push( $assoliment, Assoliment::find($asso2->idassoliments));
+        }
+        return array($var1, $ruta, $assoliment);
     }
 
     public function store(Request $request)
     {
-        $usuari=Usuari::create($request->all());
+        $usuari = Usuari::create($request->all());
         return response()->json($usuari, 201);
     }
 
