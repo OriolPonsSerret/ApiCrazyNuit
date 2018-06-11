@@ -14,8 +14,9 @@ class CreateUsuarisRutesTable extends Migration {
 	{
 		Schema::create('usuaris_rutes', function(Blueprint $table)
 		{
-			$table->integer('idusuaris');
-			$table->integer('idrutes')->index('idrutesusuaris_idx');
+			$table->integer('idusuaris')->default(0);
+			$table->integer('idrutes')->default(0)->index('idrutesusuaris_idx');
+			$table->timestamps();
 			$table->primary(['idusuaris','idrutes']);
 		});
 	}
