@@ -32,21 +32,21 @@ Nou
         </div>
     </div>
     <div class ="form-group">
-        {!! Form::label('lbllocales', 'Bares') !!}
+        {!! Form::label('lblpubs', 'Bares') !!}
         <div class="form-controls">
-            {!! Form::select('rutlocals', $bars, null, ['required'], ['class' => 'form-control']) !!}
+            {!! Form::select('rutpubs', $bars, null, ['required'], ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
-        {!! Form::label('lbllocales', 'Restaurantes') !!}
+        {!! Form::label('lblbarsrestaurant', 'Restaurantes') !!}
         <div class="form-controls">
-            {!! Form::select('rutlocals', $barrestaurant, null, ['required'], ['class' => 'form-control']) !!}
+            {!! Form::select('rutbars', $barrestaurant, null, ['required'], ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
-        {!! Form::label('lbllocales', 'Discotecas') !!}
+        {!! Form::label('lbldiscos', 'Discotecas') !!}
         <div class="form-controls">
-            {!! Form::select('rutlocals', $discotecas, null, ['required'], ['class' => 'form-control']) !!}
+            {!! Form::select('rutdiscos', $discotecas, null, ['required'], ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
