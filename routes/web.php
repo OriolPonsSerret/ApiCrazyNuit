@@ -44,6 +44,13 @@ Route::get('/rutas', function (){
 });
 
 
+//Veure totes les Rutas Mitjanas
+Route::get('/rutasmitjanas', function (){
+	$rutesmitjanas = App\Rute::all();
+	return view('rutas.indexRutasMitjanas')->with ('Rute', $rutesmitjanas);
+});
+
+
 //Crear Bars
 Route::get('locals/crearbar', function (){
 	$bars = App\Pub::all();
@@ -96,6 +103,22 @@ Route::post('rutas/ruta', function (){
 });
 
 
+//Crear Rutas Mitjanas
+
+Route::get('rutas/crearrutamitjana', function (){
+	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
+	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
+	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
+	$usuari = App\Usuari::all()->pluck('name', 'name');
+	return view('rutas.addRutasMitjanas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas)->with ('usuari', $usuari);
+});
+
+Route::post('rutas/rutamitjana', function (){
+	$rutesmitjanas = App\Rute::create(Request::all());
+	return redirect('Rutes/'.$rutesmitjanas->idrutes);
+});
+
+
 //Mostrar informacio de Restaurants
 Route::get('BarRestaurant/{id}', function ($id){
 	$barrestaurant = App\BarRestaurant::find($id);
@@ -121,6 +144,14 @@ Route::get('Rutes/{id}', function ($id){
 	$rutes = App\Rute::find($id);
 	return view('rutas.showRutas')->with ('rutes', $rutes);
 });
+
+
+//Mostrar informacio de les Rutes Mitjanas
+Route::get('RutesMitjanas/{id}', function ($id){
+	$rutesmitjanas = App\Rute::find($id);
+	return view('rutas.showRutasMitjanas')->with ('rutesmitjanas', $rutesmitjanas);
+});
+
 
 //Eliminar Bars
 Route::get('Pub/{id}/delete', function ($id) {
@@ -178,6 +209,20 @@ Route::delete('Ruta/{id}', function($id) {
 });
 
 
+//Eliminar Rutas Mitjanas
+Route::get('RutaMitjana/{id}/delete', function ($id) {
+	$rutesmitjanas = App\Rute::find($id);
+    return view('rutas.deleteRutasMitjanas')->with('rutesmitjanas', $rutesmitjanas);
+});
+
+Route::delete('RutaMitjana/{id}', function($id) {
+	$rutesmitjanas = App\Rute::find($id);
+	$rutesmitjanas->delete();
+	$rutesmitjanas = App\Rute::all();
+    return view('rutas.indexRutasMitjanas')->with ('Rute', $rutesmitjanas);
+});
+
+
 //Editar Bars
 Route::get('Pub/{id}/edit', function ($id){
 	$bars = App\Pub::find($id);
@@ -222,7 +267,8 @@ Route::get('Ruta/{id}/edit', function ($id){
 	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
 	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
 	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
-	return view('rutas.editRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas);
+	$usuari = App\Usuari::all()->pluck('name', 'name');
+	return view('rutas.editRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas)->with ('usuari', $usuari);
 });
 
 Route::put('Ruta/{id}', function ($id){

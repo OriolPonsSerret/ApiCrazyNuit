@@ -17,7 +17,6 @@ index
 	<p><strong>Horario de Apertura</strong>: {{$barrestaurant->HorariObertura}}</p>
 	<p><strong>Horario de Cierre</strong>: {{$barrestaurant->HorariTancament}}</p>
 	<p><strong>Tipo Gastronomico</strong>: {{$barrestaurant->TipusGastronomic}}</p>
-	<p><strong>Categoria</strong>: {{$barrestaurant->Categoria}}</p>
 
 @stop
 @section('footer')

@@ -16,7 +16,6 @@ index
 	<p><strong>Valoración</strong>: {{$discotecas->Valoracio}}</p>
 	<p><strong>Horario de Apertura</strong>: </p>
 	<p><strong>Horario de Cierre</strong>: </p>
-	<p><strong>Categoria</strong>: {{$discotecas->Categoria}}</p>
 	<p><strong>Precio Entrada</strong>: {{$discotecas->PreuEntrada}}</p>
 
 @stop

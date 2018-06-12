@@ -17,7 +17,6 @@ index
 	<p><strong>Horario de Apertura</strong>: </p>
 	<p><strong>Horario de Cierre</strong>: </p>
 	<p><strong>Tipo Gastronomico</strong>: {{$bars->TipusGastronomic}}</p>
-	<p><strong>Categoria</strong>: {{$bars->Categoria}}</p>
 
 @stop
 @section('footer')
