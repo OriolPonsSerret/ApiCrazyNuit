@@ -86,7 +86,8 @@ Route::get('rutas/crearruta', function (){
 	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
 	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
 	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
-	return view('rutas.addRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas);
+	$usuari = App\Usuari::all()->pluck('name', 'name');
+	return view('rutas.addRutas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas)->with ('usuari', $usuari);
 });
 
 Route::post('rutas/ruta', function (){

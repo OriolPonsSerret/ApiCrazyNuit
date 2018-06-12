@@ -58,7 +58,7 @@ Nou
     <div class ="form-group">
         {!! Form::label('lblfecha', 'Fecha de creación') !!}
         <div class="form-controls">
-            {!! Form::date('rutdata', $rutes->rutdata, ['class' => 'form-control']) !!}
+            {!! Form::date('rutdata', $rutes->rutdata, null, ['class' => 'form-control']) !!}
         </div>
     </div> 
 	{!! Form::submit('Guardar', ['class'=>'btn btn-primary'])!!}
