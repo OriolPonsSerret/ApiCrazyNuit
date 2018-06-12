@@ -22,13 +22,7 @@ Nou
     <div class ="form-group">
         {!! Form::label('lblcreador', 'Creador') !!}
         <div class="form-controls">
-            {!! Form::text('rutcreador', null, ['required'], ['class' => 'form-control']) !!}
-        </div>
-    </div>
-    <div class ="form-group">
-        {!! Form::label('lblmida', 'Mida') !!}
-        <div class="form-controls">
-            {!! Form::text('rutmida', null, ['required'], ['class' => 'form-control']) !!}
+            {!! Form::select('rutcreador', $usuari, null, ['required'], ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
