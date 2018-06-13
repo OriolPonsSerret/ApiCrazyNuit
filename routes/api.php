@@ -32,8 +32,26 @@ Route::middleware('auth:api')->get('/usuari', function (Request $request){return
 	Route::post('rutes', 'RutesController@store');
 	Route::put('rutes/{rute}', 'RutesController@update');
 	Route::delete('rutes/{rute}', 'RutesController@delete');
+	//Rutes de rutas curtes
+	Route::get('rutesC', 'RutesCController@index');
+	Route::get('rutesC/{ruteC}', 'RutesCController@show');
+	Route::post('rutesC', 'RutesCController@store');
+	Route::put('rutesC/{ruteC}', 'RutesCController@update');
+	Route::delete('rutesC/{ruteC}', 'RutesCController@delete');
+	//Rutes de rutas mitjanes
+	Route::get('rutesM', 'RutesMController@index');
+	Route::get('rutesM/{ruteM}', 'RutesMController@show');
+	Route::post('rutesM', 'RutesMController@store');
+	Route::put('rutesM/{ruteM}', 'RutesMController@update');
+	Route::delete('rutesM/{ruteM}', 'RutesMController@delete');
+	//Rutes de rutas llargues
+	Route::get('rutesLL', 'RutesLLController@index');
+	Route::get('rutesLL/{ruteLL}', 'RutesLLController@show');
+	Route::post('rutesLL', 'RutesLLController@store');
+	Route::put('rutesLL/{ruteLL}', 'RutesLLController@update');
+	Route::delete('rutesLL/{ruteLL}', 'RutesLLController@delete');
 	//Tipus de rutes
-	Route::get('rutestipus', 'RutesTipusController@index');
+	//Route::get('rutestipus', 'RutesTipusController@index');
 	//Rutes de pubs
 	Route::get('pubs', 'PubController@index');
 	Route::get('pubs/{pub}', 'PubController@show');
