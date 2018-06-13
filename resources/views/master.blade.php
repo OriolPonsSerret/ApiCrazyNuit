@@ -50,7 +50,9 @@
                         <li><a href="http://localhost/ApiCrazyNuit/public/locals/restaurantes" class="menu">Restaurantes</a></li>
                         <li><a href="http://localhost/ApiCrazyNuit/public/locals/bares" class="menu">Pubs</a></li>
                         <li><a href="http://localhost/ApiCrazyNuit/public/locals/discotecas" class="menu">Discotecas</a></li>
-                        <li><a href="http://localhost/ApiCrazyNuit/public/rutas" class="menu">Rutas</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/rutas" class="menu">Rutas Cortas</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/rutasmitjanas" class="menu">Rutas Medianas</a></li>
+                        <li><a href="http://localhost/ApiCrazyNuit/public/rutasllargas" class="menu">Rutas Llargas</a></li>
                     </ul>
                 </div>
             </div>

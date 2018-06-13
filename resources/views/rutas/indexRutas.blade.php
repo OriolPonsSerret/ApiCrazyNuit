@@ -3,7 +3,7 @@
 Nou
 @stop
 @section('header')
-<h2>Lista de Rutas</h2>
+<h2>Lista de Rutas Cortas</h2>
 @stop
 
 @section('content')  

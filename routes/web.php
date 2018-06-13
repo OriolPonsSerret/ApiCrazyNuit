@@ -46,9 +46,17 @@ Route::get('/rutas', function (){
 
 //Veure totes les Rutas Mitjanas
 Route::get('/rutasmitjanas', function (){
-	$rutesmitjanas = App\Rute::all();
-	return view('rutas.indexRutasMitjanas')->with ('Rute', $rutesmitjanas);
+	$rutesmitjanas = App\RuteM::all();
+	return view('rutas.indexRutasMitjanas')->with ('RuteM', $rutesmitjanas);
 });
+
+
+//Veure totes les Rutas Llargas
+Route::get('/rutasllargas', function (){
+	$rutesllargas = App\RuteLL::all();
+	return view('rutas.indexRutasLlargas')->with ('RuteLL', $rutesllargas);
+});
+
 
 
 //Crear Bars
@@ -114,8 +122,24 @@ Route::get('rutas/crearrutamitjana', function (){
 });
 
 Route::post('rutas/rutamitjana', function (){
-	$rutesmitjanas = App\Rute::create(Request::all());
-	return redirect('Rutes/'.$rutesmitjanas->idrutes);
+	$rutesmitjanas = App\RuteM::create(Request::all());
+	return redirect('rutesmitjanas/'.$rutesmitjanas->idrutesm);
+});
+
+
+//Crear Rutas Llargas
+
+Route::get('rutas/crearrutallarga', function (){
+	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
+	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
+	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
+	$usuari = App\Usuari::all()->pluck('name', 'name');
+	return view('rutas.addRutasLlargas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas)->with ('usuari', $usuari);
+});
+
+Route::post('rutas/rutallarga', function (){
+	$rutesllargas = App\RuteLL::create(Request::all());
+	return redirect('rutasllargas/'.$rutesllargas->idrutesl);
 });
 
 
@@ -147,9 +171,16 @@ Route::get('Rutes/{id}', function ($id){
 
 
 //Mostrar informacio de les Rutes Mitjanas
-Route::get('RutesMitjanas/{id}', function ($id){
-	$rutesmitjanas = App\Rute::find($id);
+Route::get('rutesmitjanas/{id}', function ($id){
+	$rutesmitjanas = App\RuteM::find($id);
 	return view('rutas.showRutasMitjanas')->with ('rutesmitjanas', $rutesmitjanas);
+});
+
+
+//Mostrar informacio de les Rutes Largas
+Route::get('rutasllargas/{id}', function ($id){
+	$rutesllargas = App\RuteLL::find($id);
+	return view('rutas.showRutasLargas')->with ('rutesllargas', $rutesllargas);
 });
 
 
@@ -211,16 +242,31 @@ Route::delete('Ruta/{id}', function($id) {
 
 //Eliminar Rutas Mitjanas
 Route::get('RutaMitjana/{id}/delete', function ($id) {
-	$rutesmitjanas = App\Rute::find($id);
+	$rutesmitjanas = App\RuteM::find($id);
     return view('rutas.deleteRutasMitjanas')->with('rutesmitjanas', $rutesmitjanas);
 });
 
 Route::delete('RutaMitjana/{id}', function($id) {
-	$rutesmitjanas = App\Rute::find($id);
+	$rutesmitjanas = App\RuteM::find($id);
 	$rutesmitjanas->delete();
-	$rutesmitjanas = App\Rute::all();
-    return view('rutas.indexRutasMitjanas')->with ('Rute', $rutesmitjanas);
+	$rutesmitjanas = App\RuteM::all();
+    return view('rutas.indexRutasMitjanas')->with ('RuteM', $rutesmitjanas);
 });
+
+
+//Eliminar Rutas Llargas
+Route::get('RutaLlarga/{id}/delete', function ($id) {
+	$rutesllargas = App\RuteLL::find($id);
+    return view('rutas.deleteRutasLlargas')->with('rutesllargas', $rutesllargas);
+});
+
+Route::delete('RutaLlarga/{id}', function($id) {
+	$rutesllargas = App\RuteLL::find($id);
+	$rutesllargas->delete();
+	$rutesllargas = App\RuteLL::all();
+    return view('rutas.indexRutasLlargas')->with ('RuteLL', $rutesllargas);
+});
+
 
 
 //Editar Bars
@@ -275,4 +321,21 @@ Route::put('Ruta/{id}', function ($id){
 	$rutes = App\Rute::find($id);
 	$rutes->update(Request::all());
 	return redirect('Rutes/'.$rutes->idrutes);
+});
+
+
+//Editar Ruta Mitjanas
+Route::get('RutaMitjana/{id}/edit', function ($id){
+	$rutesmitjanas = App\RuteM::find($id);
+	$bars = App\Pub::all()-> pluck('Nom', 'Nom');
+	$barrestaurant = App\BarRestaurant::all()-> pluck('Nom', 'Nom');
+	$discotecas = App\Disco::all()-> pluck('Nom', 'Nom');
+	$usuari = App\Usuari::all()->pluck('name', 'name');
+	return view('rutas.editRutasMitjanas')->with ('bars', $bars)->with ('barrestaurant', $barrestaurant)->with ('discotecas', $discotecas)->with ('usuari', $usuari);
+});
+
+Route::put('RutesMitjanas/{id}', function ($id){
+	$rutesmitjanas = App\RuteM::find($id);
+	$rutesmitjanas->update(Request::all());
+	return redirect('RutesMitjanas/'.$rutesmitjanas->idrutesm);
 });

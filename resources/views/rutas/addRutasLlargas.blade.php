@@ -3,10 +3,10 @@
 Nou
 @stop
 @section('header')
-    <h2>Crear nueva Ruta</h2>
+    <h2>Crear nueva Ruta Larga</h2>
 @stop
 @section('content')
-    {!! Form::open(['url' => 'rutas/rutamitjana']) !!}
+    {!! Form::open(['url' => 'rutas/rutallarga']) !!}
     <div class ="form-group">
         {!! Form::label('lblnom', 'Nombre') !!}
         <div class="form-controls">
@@ -38,6 +38,12 @@ Nou
         </div>
     </div>
     <div class ="form-group">
+        {!! Form::label('lblpubs', 'Bar Nº 3') !!}
+        <div class="form-controls">
+            {!! Form::select('rutpub3', $bars, null, ['required'], ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class ="form-group">
         {!! Form::label('lblbarsrestaurant', 'Restaurante Nº 1') !!}
         <div class="form-controls">
             {!! Form::select('rutbar', $barrestaurant, null, ['required'], ['class' => 'form-control']) !!}
@@ -50,6 +56,12 @@ Nou
         </div>
     </div>
     <div class ="form-group">
+        {!! Form::label('lblbarsrestaurant', 'Restaurante Nº 3') !!}
+        <div class="form-controls">
+            {!! Form::select('rutbar3', $barrestaurant, null, ['required'], ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class ="form-group">
         {!! Form::label('lbldiscos', 'Discoteca Nº 1') !!}
         <div class="form-controls">
             {!! Form::select('rutdisco', $discotecas, null, ['required'], ['class' => 'form-control']) !!}
@@ -59,6 +71,12 @@ Nou
         {!! Form::label('lbldiscos', 'Discotecas Nº 2') !!}
         <div class="form-controls">
             {!! Form::select('rutdisco2', $discotecas, null, ['required'], ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class ="form-group">
+        {!! Form::label('lbldiscos', 'Discotecas Nº 3') !!}
+        <div class="form-controls">
+            {!! Form::select('rutdisco3', $discotecas, null, ['required'], ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">

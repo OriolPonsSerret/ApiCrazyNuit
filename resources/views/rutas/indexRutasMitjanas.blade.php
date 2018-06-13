@@ -8,9 +8,9 @@ Nou
 
 @section('content')  
 
-@foreach ($Rute as $rutesmitjanas)
-	<div class="Rute">
-		<a href="{{ url('RutesMitjanas/' .$rutesmitjanas->idrutes) }}">
+@foreach ($RuteM as $rutesmitjanas)
+	<div class="RuteM">
+		<a href="{{ url('rutesmitjanas/' .$rutesmitjanas->idrutesm) }}">
 			<strong>{{ $rutesmitjanas->rutnom }}</strong>
 		</a>
 	</div>

@@ -4,8 +4,8 @@ index
 @stop
 @section('header')
 	<div>		
-		<a href="{{url('/RutaMitjana/'.$rutesmitjanas->idrutes.'/edit')}}">Modificar la ruta</a>
-		<a href="{{url('/RutaMitjana/'.$rutesmitjanas->idrutes.'/delete')}}">Eliminar la ruta</a>		
+		<a href="{{url('/RutaMitjana/'.$rutesmitjanas->idrutesm.'/edit')}}">Modificar la ruta</a>
+		<a href="{{url('/RutaMitjana/'.$rutesmitjanas->idrutesm.'/delete')}}">Eliminar la ruta</a>		
 	</div>
 @stop
 @section('content')

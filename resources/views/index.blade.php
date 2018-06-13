@@ -12,7 +12,9 @@ Nou
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/crearrestaurant" class="menu">Crear Restaurante</a></li>
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/crearbar" class="menu">Crear Pub</a></li>
         <li><a href="http://localhost/ApiCrazyNuit/public/locals/creardiscoteca" class="menu">Crear Discoteca</a></li>
-        <li><a href="http://localhost/ApiCrazyNuit/public/rutas/crearruta" class="menu">Crear rutas</a></li>
+        <li><a href="http://localhost/ApiCrazyNuit/public/rutas/crearruta" class="menu">Crear rutas Cortas</a></li>
+        <li><a href="http://localhost/ApiCrazyNuit/public/rutas/crearrutamitjana" class="menu">Crear rutas Medianas</a></li>
+        <li><a href="http://localhost/ApiCrazyNuit/public/rutas/crearrutallarga" class="menu">Crear rutas Largas</a></li>
     </ul>  
 </div>   
 

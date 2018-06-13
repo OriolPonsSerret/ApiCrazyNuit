@@ -6,17 +6,17 @@ Nou
 	<h2>Editar Ruta</h2>
 @stop
 @section('content')
-	{!! Form::open(['url'=>'/Ruta/ '.$rutes->idrutes, 'method'=>'put'])!!}
+	{!! Form::open(['url'=>'/RutesMitjanas/ '.$rutesmitjanas->idrutesm, 'method'=>'put'])!!}
 	<div class="from-group">
         {!! Form::label('lblnom', 'Nombre') !!}
         <div class="from-controls">
-            {!! Form::text('rutnom', $rutes->rutnom, ['class'=>'form-control'])!!}
+            {!! Form::text('rutnom', $rutesmitjanas->rutnom, ['class'=>'form-control'])!!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbldescripcio', 'Descripción') !!}
         <div class="form-controls">
-            {!! Form::text('rutdescripcio', $rutes, $rutes->rutdescripcio, ['class' => 'form-control']) !!}
+            {!! Form::text('rutdescripcio', $rutesmitjanas, $rutesmitjanas->rutdescripcio, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
@@ -28,31 +28,31 @@ Nou
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Bares') !!}
         <div class="form-controls">
-            {!! Form::select('rutpubs', $rutes, $bars->rutpubs, ['class' => 'form-control']) !!}
+            {!! Form::select('rutpubs', $rutesmitjanas, $bars->rutpubs, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Restaurantes') !!}
         <div class="form-controls">
-            {!! Form::select('rutbars', $rutes, $barrestaurant->rutbars, ['class' => 'form-control']) !!}
+            {!! Form::select('rutbars', $rutesmitjanas, $barrestaurant->rutbars, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lbllocales', 'Discotecas') !!}
         <div class="form-controls">
-            {!! Form::select('rutdiscos', $rutes, $discotecas->rutdiscos, ['class' => 'form-control']) !!}
+            {!! Form::select('rutdiscos', $rutesmitjanas, $discotecas->rutdiscos, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lblvaloracio', 'Valoracion') !!}
         <div class="form-controls">
-            {!! Form::text('rutvaloracio', $rutes->rutvaloracio, ['class' => 'form-control']) !!}
+            {!! Form::text('rutvaloracio', $rutesmitjanas->rutvaloracio, ['class' => 'form-control']) !!}
         </div>
     </div>
     <div class ="form-group">
         {!! Form::label('lblfecha', 'Fecha de creación') !!}
         <div class="form-controls">
-            {!! Form::date('rutdata', $rutes->rutdata, null, ['class' => 'form-control']) !!}
+            {!! Form::date('rutdata', $rutesmitjanas->rutdata, null, ['class' => 'form-control']) !!}
         </div>
     </div> 
 	{!! Form::submit('Guardar', ['class'=>'btn btn-primary'])!!}
